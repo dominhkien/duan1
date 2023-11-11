@@ -8,19 +8,22 @@
                             <ul>
                                 <li>
                                     <a href="#0">
-                                        <span class="img"><img src="assets/images/sidebar/icons/sidebar01.png" alt="sidebar"></span>
+                                        <span class="img"><img src="assets/images/sidebar/icons/sidebar01.png"
+                                                alt="sidebar"></span>
                                         <span class="cate">24X7 Care</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#0">
-                                        <span class="img"><img src="assets/images/sidebar/icons/sidebar02.png" alt="sidebar"></span>
+                                        <span class="img"><img src="assets/images/sidebar/icons/sidebar02.png"
+                                                alt="sidebar"></span>
                                         <span class="cate">100% Assurance</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#0">
-                                        <span class="img"><img src="assets/images/sidebar/icons/sidebar03.png" alt="sidebar"></span>
+                                        <span class="img"><img src="assets/images/sidebar/icons/sidebar03.png"
+                                                alt="sidebar"></span>
                                         <span class="cate">Our Promise</span>
                                     </a>
                                 </li>
@@ -55,7 +58,7 @@
                                 </li>
                                 <li>
                                     <h6 class="sub-title">
-                                        <a href="#0">sex</a>
+                                        <a href="#0">lang man</a>
                                     </h6>
                                 </li>
                             </ul>

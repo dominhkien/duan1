@@ -1,8 +1,19 @@
 <?php
-include "view/layout/header.php";
-include "view/layout/banner.php";
-include "view/public/ticketsearch.php";
-include "view/public/home.php";
-include "view/layout/footer.php";
+ob_start();
+$act = $_GET['act'] ?? "";
 
-//include "view/public/404.php";
+switch ($act) {
+    case 'home':
+        $title = "Trang chủ";
+        $VIEW = "view/public/home.php";
+        break;
+
+    default:
+
+        break;
+}
+ob_end_flush();
+
+include "view/layout/header.php";
+include $VIEW;
+include "view/layout/footer.php";
