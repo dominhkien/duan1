@@ -29,14 +29,14 @@
                     <div class="form-group row">
                         <label class="col-sm-3 text-right control-label col-form-label">Đánh giá</label>
                         <div class="col-sm-9">
-                            <input name="danh_gia" type="text" class="form-control" placeholder="Đánh giá">
+                            <input name="danh_gia" type="number" class="form-control" placeholder="Đánh giá">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-3 text-right control-label col-form-label">Ngày
                             chiếu</label>
                         <div class="col-sm-9">
-                            <input name="ngay_chieu" type="text" class="form-control" placeholder="Ngày chiếu">
+                            <input name="ngay_chieu" type="date" class="form-control" placeholder="Ngày chiếu">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -49,6 +49,10 @@
                 <div class="border-top text-center">
                     <div class="card-body">
                         <button type="submit" class="btn btn-outline-success">Thêm</button>
+                        <button type="button" class="btn btn-outline-success">
+                            <a class="text-success" href="index.php?act=listphim">Danh sách</a>
+                        </button>
                     </div>
                 </div>
+                <p class="border-top text-center"><?= $thong_bao ?? "" ?></p>
             </form>
