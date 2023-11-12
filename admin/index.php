@@ -3,7 +3,7 @@ ob_start();
 $act = $_GET['act'] ?? "";
 
 switch ($act) {
-    case 'value':
+    case '':
 
         break;
 
@@ -12,3 +12,8 @@ switch ($act) {
         break;
 }
 ob_end_flush();
+
+include "layout/header.php";
+include "layout/left.php";
+include "public/home.php";
+include "layout/footer.php";
