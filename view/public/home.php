@@ -41,33 +41,24 @@
                         <h3 class="title">CATEGORY</h3>
                         <div class="widget-1-body">
                             <ul>
+                                <?php foreach ($list_loai as $loai) : ?>
+                                <?php extract($loai);
+                                    $link = "index.php?act=listphim&id_ctg=" . $id_loai;
+                                    ?>
                                 <li>
                                     <h6 class="sub-title">
-                                        <a href="#0">danh sach phim top 10</a>
+                                        <a href="<?= $link ?>"><?= $ten_loai ?></a>
                                     </h6>
                                 </li>
-                                <li>
-                                    <h6 class="sub-title">
-                                        <a href="#0">hành động</a>
-                                    </h6>
-                                </li>
-                                <li>
-                                    <h6 class="sub-title">
-                                        <a href="#0">tình cảm</a>
-                                    </h6>
-                                </li>
-                                <li>
-                                    <h6 class="sub-title">
-                                        <a href="#0">lang man</a>
-                                    </h6>
-                                </li>
+                                <?php endforeach; ?>
                             </ul>
                         </div>
                     </div>
                     <div class="widget-1 widget-banner">
                         <div class="widget-1-body">
                             <a href="#0">
-                                <img src="assets/images/sidebar/banner/banner02.jpg" alt="banner">
+                                <img src="https://plus.unsplash.com/premium_photo-1682146739433-5926577acb7a?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                    alt="">
                             </a>
                         </div>
                     </div>
@@ -76,164 +67,54 @@
                     <div class="article-section padding-bottom">
                         <div class="section-header-1">
                             <h2 class="title">MOVIES HOT</h2>
-                            <a class="view-all" href="movie-grid.html">View All</a>
                         </div>
                         <div class="row mb-30-none justify-content-center">
+                            <?php foreach ($top3_phim as $top3) : ?>
+                            <?php extract($top3) ?>
                             <div class="col-sm-6 col-lg-4">
                                 <div class="movie-grid">
                                     <div class="movie-thumb c-thumb">
                                         <a href="#0">
-                                            <img src="assets/images/movie/movie01.jpg" alt="movie">
+                                            <img style="width: 260px; height: 360px; object-fit: cover;"
+                                                src="upload/<?= $anh ?>" alt="">
                                         </a>
                                     </div>
                                     <div class="movie-content bg-one">
-                                        <h5 class="title m-0">
-                                            <a href="#0">alone</a>
-                                        </h5>
-                                        <ul class="movie-rating-percent">
-                                            <li>
-                                                <div class="thumb">
-                                                    <img src="assets/images/movie/tomato.png" alt="movie">
-                                                </div>
-                                                <span class="content">88%</span>
-                                            </li>
-                                            <li>
-                                                <div class="thumb">
-                                                    <img src="assets/images/movie/cake.png" alt="movie">
-                                                </div>
-                                                <span class="content">88%</span>
-                                            </li>
-                                        </ul>
+                                        <h6 class="title m-0">
+                                            <a style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"
+                                                href="#0"><?= $ten_phim ?></a>
+                                        </h6>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-lg-4">
-                                <div class="movie-grid">
-                                    <div class="movie-thumb c-thumb">
-                                        <a href="#0">
-                                            <img src="assets/images/movie/movie02.jpg" alt="movie">
-                                        </a>
-                                    </div>
-                                    <div class="movie-content bg-one">
-                                        <h5 class="title m-0">
-                                            <a href="#0">mars</a>
-                                        </h5>
-                                        <ul class="movie-rating-percent">
-                                            <li>
-                                                <div class="thumb">
-                                                    <img src="assets/images/movie/tomato.png" alt="movie">
-                                                </div>
-                                                <span class="content">88%</span>
-                                            </li>
-                                            <li>
-                                                <div class="thumb">
-                                                    <img src="assets/images/movie/cake.png" alt="movie">
-                                                </div>
-                                                <span class="content">88%</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-4">
-                                <div class="movie-grid">
-                                    <div class="movie-thumb c-thumb">
-                                        <a href="#0">
-                                            <img src="assets/images/movie/movie03.jpg" alt="movie">
-                                        </a>
-                                    </div>
-                                    <div class="movie-content bg-one">
-                                        <h5 class="title m-0">
-                                            <a href="#0">venus</a>
-                                        </h5>
-                                        <ul class="movie-rating-percent">
-                                            <li>
-                                                <div class="thumb">
-                                                    <img src="assets/images/movie/tomato.png" alt="movie">
-                                                </div>
-                                                <span class="content">88%</span>
-                                            </li>
-                                            <li>
-                                                <div class="thumb">
-                                                    <img src="assets/images/movie/cake.png" alt="movie">
-                                                </div>
-                                                <span class="content">88%</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php endforeach; ?>
                         </div>
                     </div>
                     <div class="article-section padding-bottom">
                         <div class="section-header-1">
                             <h2 class="title">MOVIES</h2>
-                            <a class="view-all" href="events.html">View All</a>
+                            <a class="view-all" href="index.php?act=listmovie">View All</a>
                         </div>
                         <div class="row mb-30-none justify-content-center">
+                            <?php foreach ($list_phim as $listh) : ?>
+                            <?php extract($listh);
+                                ?>
                             <div class="col-sm-6 col-lg-4">
                                 <div class="event-grid">
                                     <div class="movie-thumb c-thumb">
                                         <a href="#0">
-                                            <img src="assets/images/event/event01.jpg" alt="event">
+                                            <img style="width: 260px; height: 360px; object-fit: cover;"
+                                                src="upload/<?= $anh ?>" alt="event">
                                         </a>
-                                        <div class="event-date">
-                                            <h6 class="date-title">28</h6>
-                                            <span>Dec</span>
-                                        </div>
                                     </div>
                                     <div class="movie-content bg-one">
                                         <h5 class="title m-0">
-                                            <a href="#0">Digital Economy Conference 2020</a>
+                                            <a href="#0"><?= $ten_phim ?></a>
                                         </h5>
-                                        <div class="movie-rating-percent">
-                                            <span>327 Montague Street</span>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-lg-4">
-                                <div class="event-grid">
-                                    <div class="movie-thumb c-thumb">
-                                        <a href="#0">
-                                            <img src="assets/images/event/event02.jpg" alt="event">
-                                        </a>
-                                        <div class="event-date">
-                                            <h6 class="date-title">28</h6>
-                                            <span>Dec</span>
-                                        </div>
-                                    </div>
-                                    <div class="movie-content bg-one">
-                                        <h5 class="title m-0">
-                                            <a href="#0">web design conference 2020</a>
-                                        </h5>
-                                        <div class="movie-rating-percent">
-                                            <span>327 Montague Street</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-4">
-                                <div class="event-grid">
-                                    <div class="movie-thumb c-thumb">
-                                        <a href="#0">
-                                            <img src="assets/images/event/event03.jpg" alt="event">
-                                        </a>
-                                        <div class="event-date">
-                                            <h6 class="date-title">28</h6>
-                                            <span>Dec</span>
-                                        </div>
-                                    </div>
-                                    <div class="movie-content bg-one">
-                                        <h5 class="title m-0">
-                                            <a href="#0">digital thinkers meetup</a>
-                                        </h5>
-                                        <div class="movie-rating-percent">
-                                            <span>327 Montague Street</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php endforeach; ?>
                         </div>
                     </div>
                 </div>

@@ -24,7 +24,7 @@ function delete_phim($id_phim)
 
 function all_phim()
 {
-    $sql = "select * from phim";
+    $sql = "select * from phim order by id_phim desc";
     $list = pdo_query($sql);
     return $list;
 }
@@ -34,4 +34,17 @@ function one_phim($id_phim)
     $sql = "select * from phim where id_phim = ?";
     $one_phim = pdo_query_one($sql, $id_phim);
     return $one_phim;
+}
+
+function top3_phim()
+{
+    $sql = "select * from phim order by id_phim desc limit 0,3";
+    $top10 = pdo_query($sql);
+    return $top10;
+}
+
+function select3_phim(){
+    $sql = "select * from phim limit 0,3";
+    $sl3 = pdo_query($sql);
+    return $sl3;
 }

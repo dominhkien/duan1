@@ -11,8 +11,7 @@
     <div class="border-top text-center">
         <div class="card-body">
             <input type="submit" name="them" class="btn btn-outline-success" value="Thêm"></input>
-            <a href="index.php?act=dsloaiphim"><input type="button" class="btn btn-outline-success"
-                    value="Danh sách"></a>
+            <a href="index.php?act=dsloaiphim"><input type="button" class="btn btn-outline-success" value="Danh sách"></a>
         </div>
 
     </div>

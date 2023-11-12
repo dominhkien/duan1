@@ -21,7 +21,6 @@
 </head>
 
 <body>
-    <!-- ==========Preloader========== -->
     <div class="preloader">
         <div class="preloader-inner">
             <div class="preloader-icon">
@@ -30,29 +29,25 @@
             </div>
         </div>
     </div>
-    <!-- ==========Preloader========== -->
-    <!-- ==========Overlay========== -->
     <div class="overlay"></div>
     <a href="#0" class="scrollToTop">
         <i class="fas fa-angle-up"></i>
     </a>
-    <!-- ==========Overlay========== -->
-
-    <!-- ==========Header-Section========== -->
     <header class="header-section">
         <div class="container">
             <div class="header-wrapper">
                 <div class="logo">
-                    <a href="index.html">
-                        <img style="width: 170px; height: 80px; object-fit: cover;" src="assets/images/logo/logoquy.png" alt="logo">
+                    <a href="index.php">
+                        <img style="width: 170px; height: 80px; object-fit: cover;" src="assets/images/logo/logoquy.png"
+                            alt="logo">
                     </a>
                 </div>
                 <ul class="menu">
                     <li>
-                        <a href="#0" class="active">Home</a>
+                        <a href="index.php" class="active">Home</a>
                     </li>
                     <li>
-                        <a href="#0">movies</a>
+                        <a href="index.php?act=listmovie">movies</a>
                     </li>
                     <li>
                         <a href="contact.html">location</a>
@@ -69,4 +64,3 @@
             </div>
         </div>
     </header>
-    <!-- ==========Header-Section========== -->

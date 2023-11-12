@@ -11,6 +11,48 @@ switch ($act) {
         $VIEW = "public/home.php";
         break;
 
+    case 'addloaiphim':
+        $title = "Thêm Loại Phim";
+        if (isset($_POST['them']) && $_POST['them']) {
+            $tenloai = $_POST['loaiphim'];
+            addtl($tenloai);
+            $mess = "Thêm Thành Công";
+        }
+        $VIEW = "loaiphim/add.php";
+        break;
+        //danh sách thể loại
+    case 'dsloaiphim':
+        $title = "Danh Sách Loại Phim";
+        $listtl = listtl();
+        $VIEW = "loaiphim/list.php";
+        break;
+        // xoá thể loại
+    case 'deletetl':
+        if (isset($_GET['id_loai']) && $_GET['id_loai'] > 0) {
+            xoatl($_GET['id_loai']);
+        }
+        $listtl = listtl();
+        $VIEW = "loaiphim/list.php";
+        break;
+        //sửa loại phim
+    case 'updatetl':
+        if (isset($_GET['id_loai']) && $_GET['id_loai'] > 0) {
+            $id_loai = $_GET['id_loai'];
+            $one_loai = one_loai($id_loai);
+            $VIEW = "loaiphim/update.php";
+        }
+        break;
+        // sửa loại phim
+    case 'updateloaiphim':
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            $tenloai = $_POST['loaiphim'];
+            $id_loai = $_POST['id_loai'];
+            updatetl($tenloai, $id_loai);
+        }
+        $listtl = listtl();
+        $VIEW = "loaiphim/list.php";
+        break;
+
     case 'listphim':
         $title = "Danh sách phim";
         $list = all_phim();
@@ -63,6 +105,14 @@ switch ($act) {
         }
         $list = all_phim();
         $VIEW = "phim/list.php";
+        break;
+
+    case "ctphimloai":
+        $VIEW = "ctphimloai/list.php";
+        break;
+
+    case "addctphimloai":
+        $VIEW = "ctphimloai/add.php";
         break;
 
     default:
