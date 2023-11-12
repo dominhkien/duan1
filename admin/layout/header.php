@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
-    <title>Matrix Template - The Ultimate Multipurpose admin template</title>
+    <title><?= $title ?? "" ?></title>
     <link href="assets/libs/flot/css/float-chart.css" rel="stylesheet">
     <link href="dist/css/style.min.css?ver=<?= rand() ?>" rel="stylesheet">
     <link rel="stylesheet" href="dist/css/form.css?ver=<?= rand() ?>">
