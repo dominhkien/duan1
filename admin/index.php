@@ -15,5 +15,5 @@ ob_end_flush();
 
 include "layout/header.php";
 include "layout/left.php";
-include "public/home.php";
+include "phim/add.php";
 include "layout/footer.php";
