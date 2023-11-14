@@ -1,12 +1,12 @@
 <?php
 // thêm giờ chiếu
 function add_showtime($giochieu){
-    $sql = "insert into gio_chieu(ten_giochieu) value(?)";
+    $sql = "insert into gio_chieu(gio_chieu) value(?)";
     pdo_execute($sql,$giochieu);
 }
 //update giờ chiếu
 function update_showtime($giochieu,$id_giochieu){
-    $sql ="update gio_chieu set ten_giochieu = ? where id_giochieu = ?";
+    $sql ="update gio_chieu set gio_chieu = ? where id_giochieu = ?";
     pdo_execute($sql,$giochieu,$id_giochieu);
 }
 //xoá giờ chiếu

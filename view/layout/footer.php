@@ -1,5 +1,5 @@
-    <!-- ==========Newslater-Section========== -->
-    <footer class="footer-section">
+<!-- ==========Newslater-Section========== -->
+<footer class="footer-section">
         <div class="container">
             <div class="footer-top">
                 <div class="logo">

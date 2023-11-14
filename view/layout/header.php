@@ -74,7 +74,7 @@
                         <a href="#0" class="active">Home</a>
                     </li>
                     <li>
-                        <a href="#0">movies</a>
+                    <a href="#0">movies</a>
                     </li>
                     <li>
                         <a href="contact.html">location</a>
@@ -103,4 +103,3 @@
             </div>
         </div>
     </header>
-    <!-- ==========Header-Section========== -->

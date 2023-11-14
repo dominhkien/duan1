@@ -2,9 +2,9 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title m-b-0">Danh sách loại phim</h5>
+                <h5 class="card-title m-b-0">Danh Sách Giờ Chiếu</h5>
             </div>
-            <form action="index.php?act=dsloaiphim" method="post">
+            <form action="index.php?act=list_showtime" method="post">
             <div class="table-responsive">
                 <table class="table">
                     <thead class="thead-light">
@@ -22,15 +22,15 @@
                     </thead>
                     <tbody class="customtable">
                         <tr>
-                            <?php foreach ($listtl as $theloai) {
-                            $suatl = "index.php?act=updatetl&id_loai=".$theloai['id_loai'];
-                            $xoatl = "index.php?act=deletetl&id_loai=".$theloai['id_loai'];
+                            <?php foreach ($list_showtime as $time) {
+                            $suatime = "index.php?act=update_showtime&id_giochieu=".$time['id_giochieu'];
+                            $xoatime = "index.php?act=delete_showtime&id_giochieu=".$time['id_giochieu'];
                             echo '<tr>
                             <td><input type="checkbox" name="" id=""></td>
-                            <td>'.$theloai['id_loai'].'</td>
-                            <td>'.$theloai['ten_loai'].'</td>
-                            <td><a href="'.$suatl.'"><input type="button"  value="Sửa"></a>
-                            <a href="'.$xoatl.'"><input type="button"  value="Xoá"></a></td>
+                            <td>'.$time['id_giochieu'].'</td>
+                            <td>'.$time['gio_chieu'].'</td>
+                            <td><a href="'.$suatime.'"><input type="button"  value="Sửa"></a>
+                            <a href="'.$xoatime.'"><input type="button"  value="Xoá"></a></td>
                         </tr>';
                             }
                     ?>

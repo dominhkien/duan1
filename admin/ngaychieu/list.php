@@ -2,9 +2,9 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title m-b-0">Danh sách loại phim</h5>
+                <h5 class="card-title m-b-0">Danh Sách Ngày Chiếu</h5>
             </div>
-            <form action="index.php?act=dsloaiphim" method="post">
+            <form action="index.php?act=list_showdate" method="post">
             <div class="table-responsive">
                 <table class="table">
                     <thead class="thead-light">
@@ -22,15 +22,16 @@
                     </thead>
                     <tbody class="customtable">
                         <tr>
-                            <?php foreach ($listtl as $theloai) {
-                            $suatl = "index.php?act=updatetl&id_loai=".$theloai['id_loai'];
-                            $xoatl = "index.php?act=deletetl&id_loai=".$theloai['id_loai'];
+                            <?php foreach ($list_showdate as $date) {
+                            $suadate = "index.php?act=update_showdate&id_ngaychieu=".$date['id_ngaychieu'];
+                            $xoadate = "index.php?act=delete_showdate&id_ngaychieu=".$date['id_ngaychieu'];
+                            $formatted_date = date("d-m-Y", strtotime($date['ngay_chieu']));
                             echo '<tr>
                             <td><input type="checkbox" name="" id=""></td>
-                            <td>'.$theloai['id_loai'].'</td>
-                            <td>'.$theloai['ten_loai'].'</td>
-                            <td><a href="'.$suatl.'"><input type="button"  value="Sửa"></a>
-                            <a href="'.$xoatl.'"><input type="button"  value="Xoá"></a></td>
+                            <td>'.$date['id_ngaychieu'].'</td>
+                            <td>'.$formatted_date.'</td>
+                            <td><a href="'.$suadate.'"><input type="button"  value="Sửa"></a>
+                            <a href="'.$xoadate.'"><input type="button"  value="Xoá"></a></td>
                         </tr>';
                             }
                     ?>

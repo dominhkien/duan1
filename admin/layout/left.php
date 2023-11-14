@@ -31,6 +31,33 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?act=add_location" aria-expanded="false">
+                        <i class="fa-solid fa-tape">
+                        </i>
+                        <span class="hide-menu">
+                            Location
+                        </span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?act=add_showdate" aria-expanded="false">
+                        <i class="fa-solid fa-tape">
+                        </i>
+                        <span class="hide-menu">
+                            Showdate
+                        </span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?act=add_showtime" aria-expanded="false">
+                        <i class="fa-solid fa-tape">
+                        </i>
+                        <span class="hide-menu">
+                            Showtime
+                        </span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="charts.html" aria-expanded="false">
                         <i class="mdi mdi-chart-bar">
                         </i>
