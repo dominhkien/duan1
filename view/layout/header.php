@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title><?= $title ?? "" ?></title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css?ver=<?= rand() ?>">
     <link rel="stylesheet" href="assets/css/all.min.css?ver=<?= rand() ?>">
@@ -19,7 +20,28 @@
     <link rel="stylesheet" href="assets/css/jquery.animatedheadline.css?ver=<?= rand() ?>">
     <link rel="stylesheet" href="assets/css/main.css?ver=<?= rand() ?>">
 </head>
-
+<style>
+    .user-Information{
+        position: fixed;
+        top: 100px;
+        right: 0;
+        width: 250px;
+        height: auto;
+        background-image: linear-gradient(to left, rgba(255,0,0,0), rgba(255,0,0,1));
+        z-index: 999;
+        box-shadow: 0 0 10px 2px #dfdfdf;
+        transform: translateX(100%);
+        transition: 0.3s;
+    }
+    .user-Information li {
+        list-style: none;
+        margin: 10px 30px;
+        color: white;
+    }
+    .user-Information li:hover{
+        text-decoration:    underline;
+    }
+</style>
 <body>
     <!-- ==========Preloader========== -->
     <div class="preloader">
@@ -57,10 +79,22 @@
                     <li>
                         <a href="contact.html">location</a>
                     </li>
-                    <li class="header-button pr-0">
-                        <a href="sign-up.html">join us</a>
+                    <?php
+                    if(isset($_SESSION['khach_hang'])){ ?>
+                    <li class="header-button pr-0  user" >
+                    <a><i class="fa-regular fa-user" style="color: #ffffff;"></i></a>
                     </li>
+                    <?php }else{ ?>
+                    <li class="header-button pr-0 " >
+                        <a href="index.php?act=sign-in">join us</a>
+                    </li>
+                    <?php }?>
                 </ul>
+                <div class="user-Information">
+                        <li>Thông Tin Người dùng</li>
+                        <li>Đăng nhập Admin</li>
+                        <li>Chuyển đổi tài khoản</li>
+                </div>
                 <div class="header-bar d-lg-none">
                     <span></span>
                     <span></span>

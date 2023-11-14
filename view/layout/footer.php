@@ -79,5 +79,20 @@
     <script src="assets/js/nice-select.js"></script>
     <script src="assets/js/main.js"></script>
     </body>
+    <script>
+        let user = document.querySelector(".user-Information")
+        let button = document.querySelector(".user")
+        let countLogin = 0
+        let body = document.querySelector("body")
+        // let main = document.querySelector('.main')
 
+        button.addEventListener("click", () => {
+            countLogin++
+            if (countLogin % 2 != 0) {
+                user.style.transform = "translateX(0)"
+            } else {
+                user.style.transform = "translateX(100%)"
+            }
+        })
+    </script>
     </html>

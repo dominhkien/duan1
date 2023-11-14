@@ -106,12 +106,20 @@ switch ($act) {
                 $list = all_phim();
                 $VIEW = "phim/list.php";
                 break;
+        case 'add_location':
+            $title = "Thêm Loại Phim";
+            if(isset($_POST['them']) && $_POST['them']){
+                $tenloai = $_POST['loaiphim'];
+                addtl($tenloai);
+                $mess = "Thêm Thành Công";
+            }
+            $VIEW = "loaiphim/add.php";
+            break;
     default:
         $title = "Trang chủ";
         $VIEW = "public/home.php";
         break;
-}
-ob_end_flush();
+}ob_end_flush();
 
 include "layout/header.php";
 include "layout/left.php";
