@@ -185,7 +185,7 @@ switch ($act) {
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $gio_chieu = $_POST['gio_chieu'];
             $id_giochieu = $_POST['id_giochieu'];
-            update_location($gio_chieu, $id_giochieu);
+            update_showtime($gio_chieu, $id_giochieu);
         }
         $list_showtime = list_showtime();
         $VIEW = "giochieu/list.php";
