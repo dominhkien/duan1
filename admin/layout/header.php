@@ -30,7 +30,7 @@
                         <i class="ti-menu ti-close">
                         </i>
                     </a>
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="index.php">
                         <b class="logo-icon p-l-10">
                             <img style="width: 170px; height: 70px; object-fit: cover;" src="assets/images/logoquy.png" alt="homepage" class="light-logo" />
                         </b>
