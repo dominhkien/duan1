@@ -358,6 +358,51 @@ switch ($act) {
         $VIEW = "phim/add.php";
         break;
 
+    case 'sphim':
+        if ($_SERVER['REQUEST_METHOD'] == "GET") {
+            $one_phim = one_phim($_GET['id_phim']);
+        }
+        $VIEW = "phim/update.php";
+        break;
+
+    case 'updatephim':
+        // var_dump($_POST);
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            extract($_FILES);
+            $dir = "../upload/";
+            $id_phim = $_POST['id_phim'];
+            $ten_phim = $_POST['ten_phim'];
+            $id_loai = $_POST['id_loai'];
+            $mo_ta = $_POST['mo_ta'];
+            $id_diadiem = $_POST['id_diadiem'];
+            $id_rap = $_POST['id_rap'];
+            $id_ngaychieu = $_POST['id_ngaychieu'];
+            $id_giochieu = $_POST['id_giochieu'];
+            $thoi_luong = $_POST['thoi_luong'];
+            $trailer = $_POST['trailer'];
+
+            if (!empty($_FILES['anh']['name'])) {
+                $nameimg = $_FILES['anh']['name'];
+                $updateimg = $dir . basename($nameimg);
+                move_uploaded_file($_FILES['anh']['tmp_name'], $updateimg);
+            } else {
+                $updateimg = '';
+            }
+
+            update_phim($updateimg, $ten_phim, $mo_ta, $thoi_luong, $trailer, $id_loai, $id_ngaychieu, $id_giochieu, $id_rap, $id_diadiem, $id_phim);
+        }
+        $list = all_phim();
+        $VIEW = "phim/list.php";
+        break;
+
+    case 'xoaphim':
+        if ($_SERVER['REQUEST_METHOD'] == "GET") {
+            delete_phim($_GET['id_phim']);
+        }
+        $list = all_phim();
+        $VIEW = "phim/list.php";
+        break;
+
     default:
         $title = "Trang chủ";
         $VIEW = "public/home.php";

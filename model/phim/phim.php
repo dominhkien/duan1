@@ -13,7 +13,13 @@ function all_phim()
 
 function one_phim($id_phim)
 {
-    $sql = "select * from phim where id_phim = ?";
+    $sql = "select phim.*, the_loai.ten_loai as ten_loai, ngay_chieu.ngay_chieu as ngay_chieu, gio_chieu.gio_chieu as gio_chieu, dia_diem.ten_diadiem as dia_diem, rap.ten_rap as ten_rap from phim 
+    join the_loai on phim.id_loai = the_loai.id_loai 
+    join ngay_chieu on phim.id_ngaychieu = ngay_chieu.id_ngaychieu 
+    join gio_chieu on phim.id_giochieu = gio_chieu.id_giochieu 
+    join dia_diem on phim.id_diadiem = dia_diem.id_diadiem
+    join rap on phim.id_rap = rap.id_rap
+    where id_phim = ?";
     $one = pdo_query_one($sql, $id_phim);
     return $one;
 }

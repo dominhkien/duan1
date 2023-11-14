@@ -43,6 +43,16 @@
                             <td><?= $ngay_chieu ?></td>
                             <td><?= $gio_chieu ?> Giờ</td>
                             <td><?= $trailer ?></td>
+                            <td>
+                                <button type="button" class="btn btn-outline-success text-center">
+                                    <a style="color: #000000;" href="<?= $suaphim ?>">Sửa</a>
+                                </button>
+                                ------
+                                <button type="button" class="btn btn-outline-success text-center">
+                                    <a onclick="return confirm('Xoá là mất luôn ??')" style="color: #000000;"
+                                        href="<?= $xoaphim ?>">Xoá</a>
+                                </button>
+                            </td>
                         </tr>
                         <?php endforeach; ?>
                     </tbody>
