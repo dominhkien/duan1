@@ -12,7 +12,8 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?act=listphim" aria-expanded="false">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?act=listphim"
+                        aria-expanded="false">
                         <i class="fa-solid fa-film">
                         </i>
                         <span class="hide-menu">
@@ -21,7 +22,8 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="movie type.html" aria-expanded="false">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?act=listtheloai"
+                        aria-expanded="false">
                         <i class="fa-solid fa-tape">
                         </i>
                         <span class="hide-menu">
@@ -31,16 +33,8 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="movie type.html" aria-expanded="false">
-                        <i class="fa-solid fa-tape">
-                        </i>
-                        <span class="hide-menu">
-                            Detail movie category
-                        </span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="charts.html" aria-expanded="false">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="charts.html"
+                        aria-expanded="false">
                         <i class="mdi mdi-chart-bar">
                         </i>
                         <span class="hide-menu">

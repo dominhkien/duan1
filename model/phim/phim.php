@@ -1,30 +1,7 @@
 <?php
-function add_phim($ten_phim, $anh, $mo_ta, $thoi_luong, $danh_gia, $ngay_chieu, $trailer)
-{
-    $sql = "insert into phim (ten_phim, anh, mo_ta, thoi_luong, danh_gia, ngay_chieu, trailer) values (?,?,?,?,?,?,?)";
-    pdo_execute($sql, $ten_phim, $anh, $mo_ta, $thoi_luong, $danh_gia, $ngay_chieu, $trailer);
-}
-
-function update_phim($ten_phim, $anh, $mo_ta, $thoi_luong, $danh_gia, $ngay_chieu, $trailer, $id_phim)
-{
-    if ($anh != "") {
-        $sql = "update phim set ten_phim = ?, anh = ?, mo_ta= ?,thoi_luong = ?,	danh_gia = ?,ngay_chieu = ?, trailer = ? where id_phim = ?";
-        pdo_execute($sql, $ten_phim, $anh, $mo_ta, $thoi_luong, $danh_gia, $ngay_chieu, $trailer, $id_phim);
-    } else {
-        $sql = "update phim set ten_phim = ?, mo_ta= ?,thoi_luong = ?,	danh_gia = ?,ngay_chieu = ?, trailer = ? where id_phim = ?";
-        pdo_execute($sql, $ten_phim, $mo_ta, $thoi_luong, $danh_gia, $ngay_chieu, $trailer, $id_phim);
-    }
-}
-
-function delete_phim($id_phim)
-{
-    $sql = "delete from phim where id_phim = ?";
-    pdo_execute($sql, $id_phim);
-}
-
 function all_phim()
 {
-    $sql = "select * from phim order by id_phim desc";
+    $sql = "select * from phim";
     $list = pdo_query($sql);
     return $list;
 }
@@ -32,19 +9,23 @@ function all_phim()
 function one_phim($id_phim)
 {
     $sql = "select * from phim where id_phim = ?";
-    $one_phim = pdo_query_one($sql, $id_phim);
-    return $one_phim;
+    $one = pdo_query_one($sql, $id_phim);
+    return $one;
 }
 
-function top3_phim()
+function add_phim($anh, $ten_phim, $ten_loai, $mo_ta, $dia_diem, $rap, $ngay_chieu, $gio_chieu, $thoi_luong, $trailer)
 {
-    $sql = "select * from phim order by id_phim desc limit 0,3";
-    $top10 = pdo_query($sql);
-    return $top10;
+    $sql = "insert into phim (anh, ten_phim, ten_loai, mo_ta, dia_diem, rap, ngay_chieu, gio_chieu, thoi_luong, trailer) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    pdo_execute($sql, $anh, $ten_phim, $ten_loai, $mo_ta, $dia_diem, $rap, $ngay_chieu, $gio_chieu, $thoi_luong, $trailer);
 }
 
-function select3_phim(){
-    $sql = "select * from phim limit 0,3";
-    $sl3 = pdo_query($sql);
-    return $sl3;
+function update_phim($id_phim, $anh, $ten_phim, $ten_loai, $mo_ta, $dia_diem, $rap, $ngay_chieu, $gio_chieu, $thoi_luong, $trailer)
+{
+    if (!empty($anh)) {
+        $sql = "update phim set anh = ?, ten_phim = ?, ten_loai = ?, mo_ta = ?, dia_diem = ?, rap = ?, ngay_chieu = ?, gio_chieu = ?, thoi_luong = ?, trailer = ? where id_phim = ?";
+        pdo_execute($sql, $anh, $ten_phim, $ten_loai, $mo_ta, $dia_diem, $rap, $ngay_chieu, $gio_chieu, $thoi_luong, $trailer, $id_phim);
+    } else {
+        $sql = "update phim set ten_phim = ?, ten_loai = ?, mo_ta = ?, dia_diem = ?, rap = ?, ngay_chieu = ?, gio_chieu = ?, thoi_luong = ?, trailer = ? where id_phim = ?";
+        pdo_execute($sql, $ten_phim, $ten_loai, $mo_ta, $dia_diem, $rap, $ngay_chieu, $gio_chieu, $thoi_luong, $trailer, $id_phim);
+    }
 }
