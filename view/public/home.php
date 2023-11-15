@@ -89,10 +89,10 @@
                     <div class="article-section padding-bottom">
                         <div class="section-header-1">
                             <h2 class="title">MOVIES</h2>
-                            <a class="view-all" href="index.php?act=listmovie">View All</a>
+                            <a class="view-all" href="index.php?act=listphim">View All</a>
                         </div>
                         <div class="row mb-30-none justify-content-center">
-                            <?php foreach ($list_phim as $listh) : ?>
+                            <?php foreach ($phim_3 as $listh) : ?>
                                 <?php extract($listh);
                                 ?>
                                 <div class="col-sm-6 col-lg-4">

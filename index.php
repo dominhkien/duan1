@@ -8,6 +8,7 @@ $act = $_GET['act'] ?? "";
 $list_loai = all_theloai();
 $list_phim = all_phim();
 $phim_hot = phim_hot();
+$phim_3 = phim_3();
 
 switch ($act) {
     case "home":
