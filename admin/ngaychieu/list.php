@@ -11,6 +11,7 @@
                             <tr>
                                 <th scope="col">ID</th>
                                 <th scope="col">NAME</th>
+                                <th scope="col">FILM</th>
                                 <th scope="col">OPTION</th>
                             </tr>
                         </thead>
@@ -23,6 +24,7 @@
                                     echo '<tr>
                             <td>' . $date['id_ngaychieu'] . '</td>
                             <td>' . $formatted_date . '</td>
+                            <td>' . $date['id_phim'] . '</td>
                             <td><a href="' . $suadate . '"><input type="button"  value="Sửa"></a>
                             <a href="' . $xoadate . '"><input type="button"  value="Xoá"></a></td>
                         </tr>';

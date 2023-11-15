@@ -19,8 +19,8 @@
                             <select name="id_loai">
                                 <option value="" disabled hidden selected>Thể loại</option>
                                 <?php foreach ($list_theloai as $the_loai) : ?>
-                                    <?php extract($the_loai); ?>
-                                    <option value="<?= $id_loai ?>"><?= $id_loai . " - " . $ten_loai ?></option>
+                                <?php extract($the_loai); ?>
+                                <option value="<?= $id_loai ?>"><?= $id_loai . " - " . $ten_loai ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
@@ -37,8 +37,8 @@
                             <select name="id_diadiem">
                                 <option value="" disabled hidden selected>Địa điểm</option>
                                 <?php foreach ($list_diadiem as $diadiem) : ?>
-                                    <?php extract($diadiem); ?>
-                                    <option value="<?= $id_diadiem ?>"><?= $id_diadiem . " - " . $ten_diadiem ?></option>
+                                <?php extract($diadiem); ?>
+                                <option value="<?= $id_diadiem ?>"><?= $id_diadiem . " - " . $ten_diadiem ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
@@ -49,35 +49,8 @@
                             <select name="id_rap">
                                 <option value="" disabled hidden selected>Rạp</option>
                                 <?php foreach ($list_rap as $rap) : ?>
-                                    <?php extract($rap); ?>
-                                    <option value="<?= $id_rap ?>"><?= $id_rap . " - " . $ten_rap ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-3 text-right control-label col-form-label">Ngày chiếu</label>
-                        <div class="col-sm-9">
-                            <select name="id_ngaychieu">
-                                <option value="" disabled hidden selected>Ngày chiếu</option>
-                                <?php foreach ($list_ngaychieu as $ngay_chieu) : ?>
-                                    <?php extract($ngay_chieu);
-                                    ?>
-                                    <option value="<?= $id_ngaychieu ?>"><?= $ngay_chieu ?>
-                                    </option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-3 text-right control-label col-form-label">Giờ chiếu</label>
-                        <div class="col-sm-9">
-                            <select name="id_giochieu">
-                                <option value="" disabled hidden selected>Giờ chiếu</option>
-                                <?php foreach ($list_giochieu as $gio_chieu) : ?>
-                                    <?php extract($gio_chieu); ?>
-                                    <option value="<?= $id_giochieu ?>"><?= $gio_chieu ?> giờ
-                                    </option>
+                                <?php extract($rap); ?>
+                                <option value="<?= $id_rap ?>"><?= $id_rap . " - " . $ten_rap ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
@@ -92,6 +65,18 @@
                         <label class="col-sm-3 text-right control-label col-form-label">Trailer</label>
                         <div class="col-sm-9">
                             <input name="trailer" type="text" class="form-control" placeholder="Trailer">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 text-right control-label col-form-label">Giá phim</label>
+                        <div class="col-sm-9">
+                            <input name="gia_phim" type="text" class="form-control" placeholder="Giá phim">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 text-right control-label col-form-label">Khuyến mãi</label>
+                        <div class="col-sm-9">
+                            <input name="km_phim" type="text" class="form-control" placeholder="Khuyến mãi">
                         </div>
                     </div>
                 </div>

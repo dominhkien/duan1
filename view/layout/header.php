@@ -47,7 +47,7 @@
                         <a href="index.php" class="active">Home</a>
                     </li>
                     <li>
-                        <a href="index.php?act=listmovie">movies</a>
+                        <a href="index.php?act=listphim">movies</a>
                     </li>
                     <li>
                         <a href="contact.html">location</a>
@@ -56,11 +56,6 @@
                         <a href="sign-up.html">join us</a>
                     </li>
                 </ul>
-                <div class="header-bar d-lg-none">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
             </div>
         </div>
     </header>

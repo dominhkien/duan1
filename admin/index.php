@@ -22,6 +22,7 @@ $list_giochieu = list_showtime();
 switch ($act) {
     case 'home':
         $title = "Trang chủ";
+        var_dump($list);
         $VIEW = "public/home.php";
         break;
 
@@ -80,7 +81,8 @@ switch ($act) {
         $title = "Thêm Rạp";
         if (isset($_POST['them']) && $_POST['them']) {
             $ten_rap = $_POST['ten_rap'];
-            add_rap($ten_rap);
+            $id_diadiem = $_POST['id_diadiem'];
+            add_rap($ten_rap, $id_diadiem);
             $mess = "Thêm Thành Công";
         }
         $VIEW = "rap/add.php";
@@ -99,7 +101,8 @@ switch ($act) {
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $ten_rap = $_POST['ten_rap'];
             $id_rap = $_POST['id_rap'];
-            update_rap($ten_rap, $id_rap);
+            $id_diadiem = $_POST['id_diadiem'];
+            update_rap($ten_rap, $id_diadiem, $id_rap);
         }
         $list_rap = list_rap();
         $VIEW = "rap/list.php";
@@ -120,6 +123,7 @@ switch ($act) {
         $list_km = list_km();
         $VIEW = "khuyenmai/list.php";
         break;
+
     case 'add_km':
         $title = "Thêm Rạp";
         if (isset($_POST['them']) && $_POST['them']) {
@@ -206,7 +210,8 @@ switch ($act) {
         $title = "Thêm Địa Điểm";
         if (isset($_POST['them']) && $_POST['them']) {
             $gio_chieu = $_POST['gio_chieu'];
-            add_showtime($gio_chieu);
+            $id_ngaychieu = $_POST['id_ngaychieu'];
+            add_showtime($gio_chieu, $id_ngaychieu);
             $mess = "Thêm Thành Công";
         }
         $VIEW = "giochieu/add.php";
@@ -239,7 +244,8 @@ switch ($act) {
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $gio_chieu = $_POST['gio_chieu'];
             $id_giochieu = $_POST['id_giochieu'];
-            update_showtime($gio_chieu, $id_giochieu);
+            $id_ngaychieu = $_POST['id_ngaychieu'];
+            update_showtime($gio_chieu, $id_ngaychieu, $id_giochieu);
         }
         $list_showtime = list_showtime();
         $VIEW = "giochieu/list.php";
@@ -250,7 +256,8 @@ switch ($act) {
         $title = "Thêm Địa Điểm";
         if (isset($_POST['them']) && $_POST['them']) {
             $ngay_chieu = $_POST['ngay_chieu'];
-            add_showdate($ngay_chieu);
+            $id_phim = $_POST['id_phim'];
+            add_showdate($ngay_chieu, $id_phim);
             $mess = "Thêm Thành Công";
         }
         $VIEW = "ngaychieu/add.php";
@@ -283,7 +290,8 @@ switch ($act) {
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $ngay_chieu = $_POST['ngay_chieu'];
             $id_ngaychieu = $_POST['id_ngaychieu'];
-            update_showdate($ngay_chieu, $id_ngaychieu);
+            $id_phim = $_POST['id_phim'];
+            update_showdate($ngay_chieu, $id_phim, $id_ngaychieu);
         }
         $list_showdate = list_showdate();
         $VIEW = "ngaychieu/list.php";
@@ -344,14 +352,14 @@ switch ($act) {
             $mo_ta = $_POST['mo_ta'];
             $id_diadiem = $_POST['id_diadiem'];
             $id_rap = $_POST['id_rap'];
-            $id_ngaychieu = $_POST['id_ngaychieu'];
-            $id_giochieu = $_POST['id_giochieu'];
             $thoi_luong = $_POST['thoi_luong'];
+            $gia_phim = $_POST['gia_phim'];
+            $km_phim = $_POST['km_phim'];
             $trailer = $_POST['trailer'];
             // var_dump($_POST);
             $upload = $anh['name'];
             move_uploaded_file($anh['tmp_name'], "../upload/" . $upload);
-            add_phim($upload, $ten_phim, $mo_ta, $thoi_luong, $trailer, $id_loai, $id_ngaychieu, $id_giochieu, $id_rap, $id_diadiem);
+            add_phim($upload, $ten_phim, $mo_ta, $thoi_luong, $trailer, $gia_phim, $km_phim, $id_loai, $id_rap, $id_diadiem);
 
             $thong_bao = "Thêm thành công !!";
         }
@@ -376,8 +384,6 @@ switch ($act) {
             $mo_ta = $_POST['mo_ta'];
             $id_diadiem = $_POST['id_diadiem'];
             $id_rap = $_POST['id_rap'];
-            $id_ngaychieu = $_POST['id_ngaychieu'];
-            $id_giochieu = $_POST['id_giochieu'];
             $thoi_luong = $_POST['thoi_luong'];
             $trailer = $_POST['trailer'];
 
@@ -389,7 +395,7 @@ switch ($act) {
                 $updateimg = '';
             }
 
-            update_phim($updateimg, $ten_phim, $mo_ta, $thoi_luong, $trailer, $id_loai, $id_ngaychieu, $id_giochieu, $id_rap, $id_diadiem, $id_phim);
+            update_phim($updateimg, $ten_phim, $mo_ta, $thoi_luong, $trailer, $gia_phim, $km_phim, $id_loai, $id_rap, $id_diadiem, $id_phim);
         }
         $list = all_phim();
         $VIEW = "phim/list.php";

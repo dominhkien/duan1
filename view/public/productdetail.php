@@ -1,9 +1,9 @@
-<section class="details-banner bg_img" data-background="assets/images/banner/banner03.jpg">
+<section style="margin-bottom: 200px;" class="details-banner bg_img" data-background="assets/images/banner/banner03.jpg">
     <div class="container">
         <?php extract($one_phim);
         $format_date = date("d-m-Y", strtotime($ngay_chieu))
         ?>
-        <div class="details-banner-wrapper">
+        <form action="" class="details-banner-wrapper" method="post">
             <div class="details-banner-thumb">
                 <img src="upload/<?= $anh ?>" alt="">
                 <a href="<?= $trailer ?>" class="video-popup">
@@ -13,15 +13,19 @@
 
             <div class="details-banner-content offset-lg-3">
                 <h3 class="title"><?= $ten_phim ?></h3>
+                <input type="hidden" name="ten_phim" value="<?= $ten_phim ?>">
+
                 <div class="social-and-duration">
-                    <div class="duration-area" style="margin-top:30px; display: flex; flex-direction: column;">
+                    <div class="duration-area" style="margin-top:30px; display: flex; flex-direction: column; row-gap: 15px;">
 
                         <div class="item">
                             <i class="fa-solid fa-location-dot"></i><span><?= $dia_diem ?></span>
+                            <input type="hidden" name="dia_diem" value="<?= $dia_diem ?>">
                         </div>
 
                         <div class="item">
                             <i class="fa-solid fa-film"></i><span><?= $ten_rap ?></span>
+                            <input type="hidden" name="ten_rap" value="<?= $ten_rap ?>">
                         </div>
 
                         <div class="item">
@@ -36,31 +40,17 @@
                             <i class="fa-solid fa-hourglass"></i></i><span><?= $thoi_luong ?> Phút</span>
                         </div>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<section style="margin-top: 100px;" class="movie-details-section padding-top padding-bottom">
-    <div class="container">
-        <div class="row justify-content-center flex-wrap-reverse mb--50">
-            <div class="col-lg-9 mb-50">
-                <div class="movie-details">
-                    <div class="tab summery-review">
-                        <div class="tab-area">
-                            <div class="tab-item active">
-                                <div class="item">
-                                    <h5 class="sub-title">Describe</h5>
-                                    <p><?= $mo_ta ?></p>
-                                </div>
-                            </div>
+                        <div class="item">
+                            <p style="font-size: 18px;"><?= $mo_ta ?></p>
                         </div>
+
                     </div>
                 </div>
+                <button style="width: 100px; height: 50px; margin-top: 20px;" type="button" class="btn btn-outline-success text-center">
+                    <a href="index.php?act=addghe">Thêm</a>
+                </button>
             </div>
-        </div>
+        </form>
+    </div>
     </div>
 </section>

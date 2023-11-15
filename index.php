@@ -2,10 +2,15 @@
 require_once "model/pdo.php";
 require_once "model/phim/theloai.php";
 require_once "model/phim/phim.php";
+require_once "model/time/ngay_chieu.php";
+require_once "model/time/gio_chieu.php";
+require_once "model/time/dia_diem.php";
+
 ob_start();
 $act = $_GET['act'] ?? "";
 
 $list_loai = all_theloai();
+$list_ngc = list_showdate();
 $list_phim = all_phim();
 $phim_hot = phim_hot();
 $phim_3 = phim_3();
@@ -18,8 +23,8 @@ switch ($act) {
 
     case "listphim":
         $title = "Danh sách phim";
-        $id_ctg = $_REQUEST['id_ctg'] ?? 0;
-        $list_phim = all_phim($id_ctg);
+        // $id_ctg = $_REQUEST['id_ctg'] ?? 0;
+        // $list_phim = all_phim();
         $VIEW = "view/public/listmovie.php";
         break;
 

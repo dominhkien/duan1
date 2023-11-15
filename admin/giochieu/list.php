@@ -11,6 +11,8 @@
                             <tr>
                                 <th scope="col">ID</th>
                                 <th scope="col">NAME</th>
+                                <th scope="col">DATE</th>
+                                <th scope="col">FILM</th>
                                 <th scope="col">OPTION</th>
                             </tr>
                         </thead>
@@ -21,7 +23,9 @@
                                     $xoatime = "index.php?act=delete_showtime&id_giochieu=" . $time['id_giochieu'];
                                     echo '<tr>
                             <td>' . $time['id_giochieu'] . '</td>
-                            <td>' . $time['gio_chieu'] . '</td>
+                            <td>' . $time['giochieu'] . '</td>
+                            <td>' . $time['id_ngaychieu'] . '</td>
+                            <td>' . $time['id_phim'] . '</td>
                             <td><a href="' . $suatime . '"><input type="button"  value="Sửa"></a>
                             <a href="' . $xoatime . '"><input type="button"  value="Xoá"></a></td>
                         </tr>';

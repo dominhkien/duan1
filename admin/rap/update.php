@@ -1,7 +1,7 @@
 <?php
 if (is_array($one_rap)) {
     extract($one_rap);
-} 
+}
 ?>
 <form action="index.php?act=sua_rap" method="post" class="form-horizontal">
     <div class="card-body">
@@ -9,9 +9,14 @@ if (is_array($one_rap)) {
         <div class="form-group row">
             <label for="fname" class="col-sm-3 text-right control-label col-form-label"> Tên Rap</label>
             <div class="col-sm-9">
-                <input type="text" class="form-control" name="ten_rap" value="<?=$ten_rap?>"
-                    placeholder="Điền tên phong">
-                <input type="hidden" name="id_rap" value="<?=$id_rap?>">
+                <input type="text" class="form-control" name="ten_rap" value="<?= $ten_rap ?>" placeholder="Điền tên rap">
+                <input type="hidden" name="id_rap" value="<?= $id_rap ?>">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="fname" class="col-sm-3 text-right control-label col-form-label"> Tên địa điểm</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="id_diadiem" value="<?= $id_diadiem ?>" placeholder="Điền tên địa điểm">
             </div>
         </div>
     </div>

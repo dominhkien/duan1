@@ -66,35 +66,6 @@ if (is_array($one_phim)) {
             </div>
         </div>
         <div class="form-group row">
-            <label class="col-sm-3 text-right control-label col-form-label">Ngày chiếu</label>
-            <div class="col-sm-9">
-                <select name="id_ngaychieu">
-                    <option value="<?= $id_ngaychieu ?? "" ?>" selected><?= $ngay_chieu ?? "" ?>
-                    </option>
-                    <?php foreach ($list_ngaychieu as $ngay_chieu) : ?>
-                    <?php extract($ngay_chieu);
-                        ?>
-                    <option value="<?= $id_ngaychieu ?>"><?= $ngay_chieu ?>
-                    </option>
-                    <?php endforeach; ?>
-                </select>
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-sm-3 text-right control-label col-form-label">Giờ chiếu</label>
-            <div class="col-sm-9">
-                <select name="id_giochieu">
-                    <option value="<?= $id_giochieu ?? "" ?>" selected><?= $gio_chieu ?? "" ?> Giờ
-                    </option>
-                    <?php foreach ($list_giochieu as $gio_chieu) : ?>
-                    <?php extract($gio_chieu); ?>
-                    <option value="<?= $id_giochieu ?>"><?= $gio_chieu ?> giờ
-                    </option>
-                    <?php endforeach; ?>
-                </select>
-            </div>
-        </div>
-        <div class="form-group row">
             <label class="col-sm-3 text-right control-label col-form-label">Thời lượng</label>
             <div class="col-sm-9">
                 <input name="thoi_luong" value="<?= $thoi_luong ?? "" ?>" type="text" class="form-control"
@@ -106,6 +77,20 @@ if (is_array($one_phim)) {
             <div class="col-sm-9">
                 <input name="trailer" value="<?= $trailer ?? "" ?>" type="text" class="form-control"
                     placeholder="Trailer">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-3 text-right control-label col-form-label">Giá phim</label>
+            <div class="col-sm-9">
+                <input name="gia_phim" value="<?= $gia_phim ?? "" ?>" type="text" class="form-control"
+                    placeholder="Giá phim">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-3 text-right control-label col-form-label">Khuyến mãi</label>
+            <div class="col-sm-9">
+                <input name="km_phim" value="<?= $km_phim ?? "" ?>" type="text" class="form-control"
+                    placeholder="Khuyến mãi">
             </div>
         </div>
     </div>
