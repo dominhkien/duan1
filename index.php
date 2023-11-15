@@ -5,6 +5,9 @@ require_once "model/phim/phim.php";
 ob_start();
 $act = $_GET['act'] ?? "";
 
+$list_loai = all_theloai();
+$list_phim = all_phim();
+$phim_hot = phim_hot();
 
 switch ($act) {
     case "home":
