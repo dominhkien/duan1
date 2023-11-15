@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="assets/css/nice-select.css?ver=<?= rand() ?>">
     <link rel="stylesheet" href="assets/css/jquery.animatedheadline.css?ver=<?= rand() ?>">
     <link rel="stylesheet" href="assets/css/main.css?ver=<?= rand() ?>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
 <body>
@@ -38,8 +39,7 @@
             <div class="header-wrapper">
                 <div class="logo">
                     <a href="index.php">
-                        <img style="width: 170px; height: 80px; object-fit: cover;" src="assets/images/logo/logoquy.png"
-                            alt="logo">
+                        <img style="width: 170px; height: 80px; object-fit: cover;" src="assets/images/logo/logoquy.png" alt="logo">
                     </a>
                 </div>
                 <ul class="menu">

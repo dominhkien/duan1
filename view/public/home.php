@@ -66,7 +66,9 @@
                         </div>
                         <div class="row mb-30-none justify-content-center">
                             <?php foreach ($phim_hot as $top3) : ?>
-                                <?php extract($top3) ?>
+                                <?php extract($top3);
+                                $link_phim = "index.php?act=ctphim&id_phim=" . $id_phim;
+                                ?>
                                 <div class="col-sm-6 col-lg-4">
                                     <div class="movie-grid">
                                         <div class="movie-thumb c-thumb">
@@ -76,7 +78,7 @@
                                         </div>
                                         <div class="movie-content bg-one">
                                             <h6 class="title m-0">
-                                                <a style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" href="#0"><?= $ten_phim ?></a>
+                                                <a style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" href="<?= $link_phim ?>"><?= $ten_phim ?></a>
                                             </h6>
                                         </div>
                                     </div>

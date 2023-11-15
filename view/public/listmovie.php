@@ -45,7 +45,9 @@
                            <div class="tab-item">
                                <div class="row mb-10 justify-content-center">
                                    <?php foreach ($list_phim as $phim) : ?>
-                                   <?php extract($phim) ?>
+                                   <?php extract($phim);
+                                        $link_phim = "index.php?act=ctphim&id_phim=" . $id_phim;
+                                        ?>
                                    <div class="col-sm-6 col-lg-4">
                                        <div class="movie-grid">
                                            <div class="movie-thumb c-thumb">
@@ -55,7 +57,7 @@
                                            </div>
                                            <div class="movie-content bg-one">
                                                <h5 class="title m-0">
-                                                   <a href="#0"><?= $ten_phim ?></a>
+                                                   <a href="<?= $link_phim ?>"><?= $ten_phim ?></a>
                                                </h5>
                                            </div>
                                        </div>
@@ -67,6 +69,7 @@
                                <div class="movie-area mb-10">
                                    <?php foreach ($list_phim as $phim) : ?>
                                    <?php extract($phim);
+                                        $link_phim = "index.php?act=ctphim&id_phim=" . $id_phim;
                                         $format_date = date("d-m-Y", strtotime($ngay_chieu));
                                         ?>
                                    <div class="movie-list">
@@ -77,7 +80,7 @@
                                        </div>
                                        <div class="movie-content bg-one">
                                            <h5 class="title">
-                                               <a href="#0"><?= $ten_phim ?></a>
+                                               <a href="<?= $link_phim ?>"><?= $ten_phim ?></a>
                                            </h5>
                                            <p class="duration"><?= $thoi_luong ?> Phút</p>
                                            <div class="movie-tags">

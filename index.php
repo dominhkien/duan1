@@ -15,9 +15,20 @@ switch ($act) {
         $VIEW = "view/public/home.php";
         break;
 
-    case "listmovie":
+    case "listphim":
         $title = "Danh sách phim";
+        $id_ctg = $_REQUEST['id_ctg'] ?? 0;
+        $list_phim = all_phim($id_ctg);
         $VIEW = "view/public/listmovie.php";
+        break;
+
+    case "ctphim":
+        // var_dump($_GET);
+        if ($_SERVER['REQUEST_METHOD'] == "GET") {
+            $one_phim = one_phim($_GET['id_phim']);
+        }
+        // var_dump($one_phim);
+        $VIEW = "view/public/productdetail.php";
         break;
 
     default:
