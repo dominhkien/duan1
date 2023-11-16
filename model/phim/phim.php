@@ -1,9 +1,14 @@
 <?php
-function all_phim()
+function all_phim($id_ctg = 0)
 {
-    $sql = "select phim.*, the_loai.ten_loai as ten_loai, dia_diem.ten_diadiem as dia_diem, rap.ten_rap as ten_rap from phim 
-    join the_loai on phim.id_loai = the_loai.id_loai 
-    join dia_diem on phim.id_diadiem = dia_diem.id_diadiem 
+    $sql = "select phim.*, the_loai.ten_loai as ten_loai, dia_diem.ten_diadiem as dia_diem, rap.ten_rap as ten_rap from phim";
+
+    if ($id_ctg > 0) {
+        $sql .= " join the_loai on phim.id_loai = the_loai.id_loai and the_loai.id_loai like '%" . $id_ctg . "%'";
+    } else {
+        $sql .= " join the_loai on phim.id_loai = the_loai.id_loai";
+    }
+    $sql .= " join dia_diem on phim.id_diadiem = dia_diem.id_diadiem 
     join rap on phim.id_rap = rap.id_rap";
     $list = pdo_query($sql);
     return $list;
@@ -11,11 +16,9 @@ function all_phim()
 
 function one_phim($id_phim)
 {
-    $sql = "select phim.*, the_loai.ten_loai as ten_loai, ngay_chieu.ngay_chieu as ngay_chieu, gio_chieu.gio_chieu as gio_chieu, dia_diem.ten_diadiem as dia_diem, rap.ten_rap as ten_rap from phim 
+    $sql = "select phim.*, the_loai.ten_loai as ten_loai, dia_diem.ten_diadiem as dia_diem, rap.ten_rap as ten_rap from phim 
     join the_loai on phim.id_loai = the_loai.id_loai 
-    join ngay_chieu on phim.id_phim = ngay_chieu.id_phim
-    join gio_chieu on phim.id_phim = gio_chieu.id_phim  
-    join dia_diem on phim.id_diadiem = dia_diem.id_diadiem
+    join dia_diem on phim.id_diadiem = dia_diem.id_diadiem 
     join rap on phim.id_rap = rap.id_rap
     where phim.id_phim = ?";
     $one = pdo_query_one($sql, $id_phim);

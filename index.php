@@ -8,10 +8,11 @@ require_once "model/time/dia_diem.php";
 
 ob_start();
 $act = $_GET['act'] ?? "";
+$id_ctg = $_REQUEST['id_ctg'] ?? 0;
 
 $list_loai = all_theloai();
 $list_ngc = list_showdate();
-$list_phim = all_phim();
+$list_phim = all_phim($id_ctg);
 $phim_hot = phim_hot();
 $phim_3 = phim_3();
 
@@ -23,8 +24,7 @@ switch ($act) {
 
     case "listphim":
         $title = "Danh sách phim";
-        // $id_ctg = $_REQUEST['id_ctg'] ?? 0;
-        // $list_phim = all_phim();
+        $list_phim = all_phim($id_ctg);
         $VIEW = "view/public/listmovie.php";
         break;
 

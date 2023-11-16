@@ -26,36 +26,43 @@
                     </thead>
                     <tbody class="customtable">
                         <?php foreach ($list as $phim) : ?>
-                            <?php extract($phim);
+                        <?php extract($phim);
+                            $date_of_phim = date_of_phim($id_phim);
+                            // var_dump($date_of_phim);
+                            $time_of_phim = time_of_phim($id_phim);
+                            // var_dump($time_of_phim);
+
                             $xoaphim = "index.php?act=xoaphim&id_phim=$id_phim";
                             $suaphim = "index.php?act=sphim&id_phim=$id_phim";
                             ?>
-                            <tr>
-                                <td><?= $id_phim ?></td>
-                                <td>
-                                    <img style="width: 150px; height: 200px; object-fit: cover;" src="../upload/<?= $anh ?>" alt="">
-                                </td>
-                                <td><?= $ten_phim ?></td>
-                                <td><?= $ten_loai ?></td>
-                                <td><?= $mo_ta ?></td>
-                                <td><?= $dia_diem ?></td>
-                                <td><?= $ten_rap ?></td>
-                                <td><?= $thoi_luong ?></td>
-                                <td><?= $ngay_chieu ?></td>
-                                <td><?= $gio_chieu ?> Giờ</td>
-                                <td><?= $trailer ?></td>
-                                <td><?= $gia_phim ?></td>
-                                <td><?= $km_phim ?></td>
-                                <td>
-                                    <button type="button" class="btn btn-outline-success text-center">
-                                        <a style="color: #000000;" href="<?= $suaphim ?>">Sửa</a>
-                                    </button>
-                                    ------
-                                    <button type="button" class="btn btn-outline-success text-center">
-                                        <a onclick="return confirm('Xoá là mất luôn ??')" style="color: #000000;" href="<?= $xoaphim ?>">Xoá</a>
-                                    </button>
-                                </td>
-                            </tr>
+                        <tr>
+                            <td><?= $id_phim ?></td>
+                            <td>
+                                <img style="width: 150px; height: 200px; object-fit: cover;" src="../upload/<?= $anh ?>"
+                                    alt="">
+                            </td>
+                            <td><?= $ten_phim ?></td>
+                            <td><?= $ten_loai ?></td>
+                            <td><?= $mo_ta ?></td>
+                            <td><?= $dia_diem ?></td>
+                            <td><?= $ten_rap ?></td>
+                            <td><?= $thoi_luong ?></td>
+                            <td><?= $date_of_phim['ngay_chieu'] ?? '' ?></td>
+                            <td><?= $time_of_phim['gio_chieu'] ?? '' ?> Giờ</td>
+                            <td><?= $trailer ?></td>
+                            <td><?= $gia_phim ?></td>
+                            <td><?= $km_phim ?></td>
+                            <td>
+                                <button type="button" class="btn btn-outline-success text-center">
+                                    <a style="color: #000000;" href="<?= $suaphim ?>">Sửa</a>
+                                </button>
+                                ------
+                                <button type="button" class="btn btn-outline-success text-center">
+                                    <a onclick="return confirm('Xoá là mất luôn ??')" style="color: #000000;"
+                                        href="<?= $xoaphim ?>">Xoá</a>
+                                </button>
+                            </td>
+                        </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
