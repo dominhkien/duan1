@@ -19,29 +19,45 @@
     <link rel="stylesheet" href="assets/css/nice-select.css?ver=<?= rand() ?>">
     <link rel="stylesheet" href="assets/css/jquery.animatedheadline.css?ver=<?= rand() ?>">
     <link rel="stylesheet" href="assets/css/main.css?ver=<?= rand() ?>">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".header-button.user").click(function() {
+                $(".user-Information").toggleClass("active");
+            });
+        });
+    </script>
 </head>
 <style>
-    .user-Information{
-        position: fixed;
-        top: 100px;
+    /* .header-wrapper {
+        position: relative;
+    } */
+    .user-Information {
+        position: absolute;
+        transform: translateY(-100%);
+        background-image: -webkit-linear-gradient(169deg, #5560ff 17%, #aa52a1 63%, #ff4343 100%);
+        border-radius: 10px;
+        opacity: 0;
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
         right: 0;
-        width: 250px;
-        height: auto;
-        background-image: linear-gradient(to left, rgba(255,0,0,0), rgba(255,0,0,1));
-        z-index: 999;
-        box-shadow: 0 0 10px 2px #dfdfdf;
-        transform: translateX(100%);
-        transition: 0.3s;
     }
+
+    .user-Information.active {
+        transform: translateY(100%);
+        opacity: 1;
+    }
+
     .user-Information li {
         list-style: none;
         margin: 10px 30px;
         color: white;
     }
-    .user-Information li:hover{
-        text-decoration:    underline;
+
+    .user-Information li:hover {
+        text-decoration: underline;
     }
 </style>
+
 <body>
     <!-- ==========Preloader========== -->
     <div class="preloader">
@@ -74,32 +90,52 @@
                         <a href="#0" class="active">Home</a>
                     </li>
                     <li>
-                    <a href="#0">movies</a>
+                        <a href="#0">movies</a>
                     </li>
                     <li>
                         <a href="contact.html">location</a>
                     </li>
                     <?php
-                    if(isset($_SESSION['khach_hang'])){ ?>
-                    <li class="header-button pr-0  user" >
-                    <a><i class="fa-regular fa-user" style="color: #ffffff;"></i></a>
-                    </li>
-                    <?php }else{ ?>
-                    <li class="header-button pr-0 " >
-                        <a href="index.php?act=sign-in">join us</a>
-                    </li>
-                    <?php }?>
+                    if (isset($_SESSION['khach_hang'])) { ?>
+                        <li class="header-button pr-0  user">
+                            <a><i class="fa-regular fa-user" style="color: #ffffff;"></i></a>
+                        </li>
+                        <div class="user-Information">
+                            <li>
+                                <a href="http://">Thông Tin Người dùng</a></li>
+                            <li>
+                            <a href="index.php?act=logout">Logout</a> <!-- Thêm liên kết Logout -->
+                        </li>
+                        </div>
+                        <div class="header-bar d-lg-none">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                    <?php } elseif (isset($_SESSION['admin'])) { ?>
+                        <li class="header-button pr-0  user">
+                            <a><i class="fa-regular fa-user" style="color: #ffffff;"></i></a>
+                        </li>
+                        <div class="user-Information">
+                            <li>
+                                <a href="index.php?act=admin">Đăng nhập admin</a></li>
+                            <li>
+                            <a href="index.php?act=logout">Logout</a> <!-- Thêm liên kết Logout -->
+                        </li>
+                        </div>
+                        <div class="header-bar d-lg-none">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    <?php } else { ?>
+                        <li class="header-button pr-0 ">
+                            <a href="index.php?act=sign-in">join us</a>
+                        </li>
+                    <?php } ?>
                 </ul>
-                <div class="user-Information">
-                        <li>Thông Tin Người dùng</li>
-                        <li>Đăng nhập Admin</li>
-                        <li>Chuyển đổi tài khoản</li>
-                </div>
-                <div class="header-bar d-lg-none">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+
             </div>
         </div>
     </header>

@@ -1,38 +1,66 @@
 <?php
-// function thêm phim
-function add_phim($ten_phim, $anh, $mo_ta, $thoi_luong, $danh_gia, $ngay_chieu, $trailer)
+function all_phim()
 {
-    $sql = "insert into phim (ten_phim, anh, mo_ta, thoi_luong, danh_gia, ngay_chieu, trailer) values (?,?,?,?,?,?,?)";
-    pdo_execute($sql, $ten_phim, $anh, $mo_ta, $thoi_luong, $danh_gia, $ngay_chieu, $trailer);
+    $sql = "select phim.*, the_loai.ten_loai as ten_loai, dia_diem.ten_diadiem as dia_diem, rap.ten_rap as ten_rap from phim 
+    join the_loai on phim.id_loai = the_loai.id_loai 
+    join dia_diem on phim.id_diadiem = dia_diem.id_diadiem 
+    join rap on phim.id_rap = rap.id_rap";
+    $list = pdo_query($sql);
+    return $list;
 }
-// function sửa phim
-function update_phim($ten_phim, $anh, $mo_ta, $thoi_luong, $danh_gia, $ngay_chieu, $trailer, $id_phim)
+
+function one_phim($id_phim)
 {
-    if ($anh != "") {
-        $sql = "update phim set ten_phim = ?, anh = ?, mo_ta= ?,thoi_luong = ?,	danh_gia = ?,ngay_chieu = ?, trailer = ? where id_phim = ?";
-        pdo_execute($sql, $ten_phim, $anh, $mo_ta, $thoi_luong, $danh_gia, $ngay_chieu, $trailer, $id_phim);
+    $sql = "select phim.*, the_loai.ten_loai as ten_loai, ngay_chieu.ngay_chieu as ngay_chieu, gio_chieu.gio_chieu as gio_chieu, dia_diem.ten_diadiem as dia_diem, rap.ten_rap as ten_rap from phim 
+    join the_loai on phim.id_loai = the_loai.id_loai 
+    join ngay_chieu on phim.id_phim = ngay_chieu.id_phim
+    join gio_chieu on phim.id_phim = gio_chieu.id_phim  
+    join dia_diem on phim.id_diadiem = dia_diem.id_diadiem
+    join rap on phim.id_rap = rap.id_rap
+    where phim.id_phim = ?";
+    $one = pdo_query_one($sql, $id_phim);
+    return $one;
+}
+
+function add_phim($anh, $ten_phim, $mo_ta, $thoi_luong, $trailer, $gia_phim, $km_phim, $id_loai, $id_rap, $id_diadiem)
+{
+    $sql = "insert into phim (anh, ten_phim, mo_ta, thoi_luong, trailer, gia_phim, km_phim, id_loai, id_rap, id_diadiem) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    pdo_execute($sql, $anh, $ten_phim, $mo_ta, $thoi_luong, $trailer, $gia_phim, $km_phim, $id_loai, $id_rap, $id_diadiem);
+}
+
+function update_phim($anh, $ten_phim, $mo_ta, $thoi_luong, $trailer, $gia_phim, $km_phim, $id_loai, $id_rap, $id_diadiem, $id_phim)
+{
+    if (!empty($anh)) {
+        $sql = "update phim set anh = ?, ten_phim = ?, mo_ta = ?, thoi_luong = ?, trailer = ?, gia_phim = ?, km_phim = ?, id_loai = ?, id_rap = ?, id_diadiem = ? where id_phim = ?";
+        pdo_execute($sql, $anh, $ten_phim, $mo_ta, $thoi_luong, $trailer, $gia_phim, $km_phim, $id_loai, $id_rap, $id_diadiem, $id_phim);
     } else {
-        $sql = "update phim set ten_phim = ?, mo_ta= ?,thoi_luong = ?,	danh_gia = ?,ngay_chieu = ?, trailer = ? where id_phim = ?";
-        pdo_execute($sql, $ten_phim, $mo_ta, $thoi_luong, $danh_gia, $ngay_chieu, $trailer, $id_phim);
+        $sql = "update phim set ten_phim = ?, mo_ta = ?, thoi_luong = ?, trailer = ?, gia_phim = ?, km_phim = ? id_loai = ?, id_ngaychieu = ?, id_giochieu = ?, id_rap = ?, id_diadiem = ? where id_phim = ?";
+        pdo_execute($sql, $ten_phim, $mo_ta, $thoi_luong, $trailer, $trailer, $gia_phim, $id_loai, $id_rap, $id_diadiem, $id_phim);
     }
 }
-// function xoá phim
+
 function delete_phim($id_phim)
 {
     $sql = "delete from phim where id_phim = ?";
     pdo_execute($sql, $id_phim);
 }
-// function lấy all
-function all_phim()
+
+function phim_hot()
 {
-    $sql = "select * from phim";
-    $list = pdo_query($sql);
-    return $list;
+    $sql = "select phim.*, the_loai.ten_loai as ten_loai, dia_diem.ten_diadiem as dia_diem, rap.ten_rap as ten_rap from phim 
+    join the_loai on phim.id_loai = the_loai.id_loai 
+    join dia_diem on phim.id_diadiem = dia_diem.id_diadiem 
+    join rap on phim.id_rap = rap.id_rap order by phim.id_phim desc limit 0,3";
+    $hot = pdo_query($sql);
+    return $hot;
 }
-// function lấy 1
-function one_phim($id_phim)
+
+function phim_3()
 {
-    $sql = "select * from phim where id_phim = ?";
-    $one_phim = pdo_query_one($sql, $id_phim);
-    return $one_phim;
+    $sql = "select phim.*, the_loai.ten_loai as ten_loai, dia_diem.ten_diadiem as dia_diem, rap.ten_rap as ten_rap from phim 
+    join the_loai on phim.id_loai = the_loai.id_loai 
+    join dia_diem on phim.id_diadiem = dia_diem.id_diadiem 
+    join rap on phim.id_rap = rap.id_rap limit 0,3";
+    $hot = pdo_query($sql);
+    return $hot;
 }

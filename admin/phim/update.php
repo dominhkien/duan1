@@ -4,56 +4,93 @@ if (is_array($one_phim)) {
 }
 ?>
 
-<form action="index.php?act=suaphim" class="form-horizontal" method="post" enctype="multipart/form-data">
+<form action="index.php?act=updatephim" class="form-horizontal" method="post" enctype="multipart/form-data">
     <div class="card-body">
-        <h4 class="card-title text-center">Sửa phim</h4>
-        <input name="id_phim" value="<?= $id_phim ?>" type="text" class="form-control">
-        <div class="form-group row">
-            <label class="col-sm-3 text-right control-label col-form-label">Tên phim</label>
-            <div class="col-sm-9">
-                <input name="ten_phim" value="<?= $ten_phim ?>" type="text" class="form-control" placeholder="Tên phim">
-            </div>
-        </div>
+        <h4 class="card-title text-center">Thêm phim</h4>
+        <input type="hidden" name="id_phim" value="<?= $id_phim ?? "" ?>">
         <div class="form-group row">
             <label class="col-sm-3 text-right control-label col-form-label">Ảnh</label>
             <div class="col-sm-9">
                 <input name="anh" type="file" class="form-control" placeholder="Ảnh">
-                <img style="width: 150px; height: 80px; object-fit: cover;" src="../upload/<?= $anh ?>" alt="">
+            </div>
+            <img style="margin-left: 350px; width: 150px; height: 200px; object-fit: cover;" src="../upload/<?= $anh ?>"
+                alt="">
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-3 text-right control-label col-form-label">Tên phim</label>
+            <div class="col-sm-9">
+                <input name="ten_phim" value="<?= $ten_phim ?? "" ?>" type="text" class="form-control"
+                    placeholder="Tên phim">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-3 text-right control-label col-form-label">Thể loại</label>
+            <div class="col-sm-9">
+                <select name="id_loai">
+                    <option value="<?= $id_loai ?>" selected><?= $ten_loai ?? "" ?></option>
+                    <?php foreach ($list_theloai as $the_loai) : ?>
+                    <?php extract($the_loai); ?>
+                    <option value="<?= $id_loai ?>"><?= $id_loai . " - " . $ten_loai ?></option>
+                    <?php endforeach; ?>
+                </select>
             </div>
         </div>
         <div class="form-group row">
             <label class="col-sm-3 text-right control-label col-form-label">Mô tả</label>
             <div class="col-sm-9">
-                <input name="mo_ta" value="<?= $mo_ta ?>" type="Mô tả" class="form-control" placeholder="Mô tả">
+                <input name="mo_ta" value="<?= $mo_ta ?? "" ?>" type="Mô tả" class="form-control" placeholder="Mô tả">
             </div>
         </div>
         <div class="form-group row">
-            <label class="col-sm-3 text-right control-label col-form-label">Thời
-                lượng</label>
+            <label class="col-sm-3 text-right control-label col-form-label">Địa điểm</label>
             <div class="col-sm-9">
-                <input name="thoi_luong" value="<?= $thoi_luong ?>" type="text" class="form-control"
+                <select name="id_diadiem">
+                    <option value="<?= $id_diadiem ?? "" ?>" selected><?= $dia_diem ?? "" ?></option>
+                    <?php foreach ($list_diadiem as $diadiem) : ?>
+                    <?php extract($diadiem); ?>
+                    <option value="<?= $id_diadiem ?>"><?= $id_diadiem . " - " . $ten_diadiem ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-3 text-right control-label col-form-label">Rạp</label>
+            <div class="col-sm-9">
+                <select name="id_rap">
+                    <option value="<?= $id_rap ?? "" ?>" selected><?= $ten_rap ?? "" ?></option>
+                    <?php foreach ($list_rap as $rap) : ?>
+                    <?php extract($rap); ?>
+                    <option value="<?= $id_rap ?>"><?= $id_rap . " - " . $ten_rap ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-3 text-right control-label col-form-label">Thời lượng</label>
+            <div class="col-sm-9">
+                <input name="thoi_luong" value="<?= $thoi_luong ?? "" ?>" type="text" class="form-control"
                     placeholder="Thời lượng">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-sm-3 text-right control-label col-form-label">Đánh giá</label>
-            <div class="col-sm-9">
-                <input name="danh_gia" value="<?= $danh_gia ?>" type="number" class="form-control"
-                    placeholder="Đánh giá">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-sm-3 text-right control-label col-form-label">Ngày
-                chiếu</label>
-            <div class="col-sm-9">
-                <input name="ngay_chieu" value="<?= $ngay_chieu ?>" type="date" class="form-control"
-                    placeholder="Ngày chiếu">
             </div>
         </div>
         <div class="form-group row">
             <label class="col-sm-3 text-right control-label col-form-label">Trailer</label>
             <div class="col-sm-9">
-                <input name="trailer" value="<?= $trailer ?>" type="text" class="form-control" placeholder="Trailer">
+                <input name="trailer" value="<?= $trailer ?? "" ?>" type="text" class="form-control"
+                    placeholder="Trailer">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-3 text-right control-label col-form-label">Giá phim</label>
+            <div class="col-sm-9">
+                <input name="gia_phim" value="<?= $gia_phim ?? "" ?>" type="text" class="form-control"
+                    placeholder="Giá phim">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-3 text-right control-label col-form-label">Khuyến mãi</label>
+            <div class="col-sm-9">
+                <input name="km_phim" value="<?= $km_phim ?? "" ?>" type="text" class="form-control"
+                    placeholder="Khuyến mãi">
             </div>
         </div>
     </div>
@@ -65,4 +102,5 @@ if (is_array($one_phim)) {
             </button>
         </div>
     </div>
+    <p class="border-top text-center"><?= $thong_bao ?? "" ?></p>
 </form>
