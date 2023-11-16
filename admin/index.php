@@ -385,6 +385,8 @@ switch ($act) {
             $id_diadiem = $_POST['id_diadiem'];
             $id_rap = $_POST['id_rap'];
             $thoi_luong = $_POST['thoi_luong'];
+            $gia_phim = $_POST['gia_phim'];
+            $km_phim = $_POST['km_phim'];
             $trailer = $_POST['trailer'];
 
             if (!empty($_FILES['anh']['name'])) {

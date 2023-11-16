@@ -37,8 +37,8 @@ function update_phim($anh, $ten_phim, $mo_ta, $thoi_luong, $trailer, $gia_phim, 
         $sql = "update phim set anh = ?, ten_phim = ?, mo_ta = ?, thoi_luong = ?, trailer = ?, gia_phim = ?, km_phim = ?, id_loai = ?, id_rap = ?, id_diadiem = ? where id_phim = ?";
         pdo_execute($sql, $anh, $ten_phim, $mo_ta, $thoi_luong, $trailer, $gia_phim, $km_phim, $id_loai, $id_rap, $id_diadiem, $id_phim);
     } else {
-        $sql = "update phim set ten_phim = ?, mo_ta = ?, thoi_luong = ?, trailer = ?, gia_phim = ?, km_phim = ? id_loai = ?, id_ngaychieu = ?, id_giochieu = ?, id_rap = ?, id_diadiem = ? where id_phim = ?";
-        pdo_execute($sql, $ten_phim, $mo_ta, $thoi_luong, $trailer, $trailer, $gia_phim, $id_loai, $id_rap, $id_diadiem, $id_phim);
+        $sql = "update phim set ten_phim = ?, mo_ta = ?, thoi_luong = ?, trailer = ?, gia_phim = ?, km_phim = ?,  id_loai = ?, id_rap = ?, id_diadiem = ? where id_phim = ?";
+        pdo_execute($sql, $ten_phim, $mo_ta, $thoi_luong, $trailer, $gia_phim, $km_phim, $id_loai, $id_rap, $id_diadiem, $id_phim);
     }
 }
 
