@@ -8,15 +8,27 @@
             </div>
         </div>
         <div class="form-group row">
-            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Ngày chiếu</label>
+            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Điền ngay chieu</label>
             <div class="col-sm-9">
-                <input type="text" class="form-control" name="ngay_chieu" placeholder="Điền Ngày chiếu">
+                <select name="id_phim">
+                    <option value="" disabled hidden selected>ngay chieu</option>
+                    <?php foreach ($list_ngaychieu as $ngay_chieu) : ?>
+                        <?php extract($ngay_chieu); ?>
+                        <option value="<?= $id_ngaychieu ?>"><?= $id_ngaychieu ?> - <?= $ngay_chieu ?></option>
+                    <?php endforeach; ?>
+                </select>
             </div>
         </div>
         <div class="form-group row">
-            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Phim</label>
+            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Điền phim</label>
             <div class="col-sm-9">
-                <input type="text" class="form-control" name="id_phim" placeholder="Điền phim">
+                <select name="id_phim">
+                    <option value="" disabled hidden selected>Phim</option>
+                    <?php foreach ($list as $phim) : ?>
+                        <?php extract($phim); ?>
+                        <option value="<?= $id_phim ?>"><?= $id_phim ?> - <?= $ten_phim ?></option>
+                    <?php endforeach; ?>
+                </select>
             </div>
         </div>
     </div>
