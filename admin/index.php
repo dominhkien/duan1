@@ -211,7 +211,8 @@ switch ($act) {
         if (isset($_POST['them']) && $_POST['them']) {
             $gio_chieu = $_POST['gio_chieu'];
             $id_ngaychieu = $_POST['id_ngaychieu'];
-            add_showtime($gio_chieu, $id_ngaychieu);
+            $id_phim = $_POST['id_phim'];
+            add_showtime($gio_chieu, $id_ngaychieu, $id_phim);
             $mess = "Thêm Thành Công";
         }
         $VIEW = "giochieu/add.php";
@@ -245,7 +246,8 @@ switch ($act) {
             $gio_chieu = $_POST['gio_chieu'];
             $id_giochieu = $_POST['id_giochieu'];
             $id_ngaychieu = $_POST['id_ngaychieu'];
-            update_showtime($gio_chieu, $id_ngaychieu, $id_giochieu);
+            $id_phim = $_POST['id_phim'];
+            update_showtime($gio_chieu, $id_ngaychieu, $id_phim, $id_giochieu);
         }
         $list_showtime = list_showtime();
         $VIEW = "giochieu/list.php";

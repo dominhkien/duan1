@@ -23,7 +23,7 @@
                                     $xoatime = "index.php?act=delete_showtime&id_giochieu=" . $time['id_giochieu'];
                                     echo '<tr>
                             <td>' . $time['id_giochieu'] . '</td>
-                            <td>' . $time['giochieu'] . '</td>
+                            <td>' . $time['gio_chieu'] . '</td>
                             <td>' . $time['id_ngaychieu'] . '</td>
                             <td>' . $time['id_phim'] . '</td>
                             <td><a href="' . $suatime . '"><input type="button"  value="Sửa"></a>

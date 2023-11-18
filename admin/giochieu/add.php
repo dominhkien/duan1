@@ -10,7 +10,7 @@
         <div class="form-group row">
             <label for="fname" class="col-sm-3 text-right control-label col-form-label">Điền ngay chieu</label>
             <div class="col-sm-9">
-                <select name="id_phim">
+                <select name="id_ngaychieu">
                     <option value="" disabled hidden selected>ngay chieu</option>
                     <?php foreach ($list_ngaychieu as $ngay_chieu) : ?>
                         <?php extract($ngay_chieu); ?>

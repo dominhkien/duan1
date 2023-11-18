@@ -1,15 +1,15 @@
 <?php
 // thêm giờ chiếu
-function add_showtime($giochieu, $id_ngaychieu)
+function add_showtime($giochieu, $id_ngaychieu, $id_phim)
 {
-    $sql = "insert into gio_chieu(gio_chieu, id_ngaychieu) value(?, ?)";
-    pdo_execute($sql, $giochieu, $id_ngaychieu);
+    $sql = "insert into gio_chieu(gio_chieu, id_ngaychieu, id_phim) value(?, ?, ?)";
+    pdo_execute($sql, $giochieu, $id_ngaychieu, $id_phim);
 }
 //update giờ chiếu
-function update_showtime($giochieu, $id_ngaychieu, $id_giochieu)
+function update_showtime($giochieu, $id_ngaychieu, $id_phim, $id_giochieu)
 {
-    $sql = "update gio_chieu set gio_chieu = ?, id_ngaychieu = ? where id_giochieu = ?";
-    pdo_execute($sql, $giochieu, $id_ngaychieu, $id_giochieu);
+    $sql = "update gio_chieu set gio_chieu = ?, id_ngaychieu = ?, id_phim = ? where id_giochieu = ?";
+    pdo_execute($sql, $giochieu, $id_ngaychieu, $id_phim, $id_giochieu);
 }
 //xoá giờ chiếu
 function delete_showtime($id_giochieu)
