@@ -94,6 +94,7 @@
                         <div class="row mb-30-none justify-content-center">
                             <?php foreach ($phim_3 as $listh) : ?>
                                 <?php extract($listh);
+                                $link_phim = "index.php?act=ctphim&id_phim=" . $id_phim;
                                 ?>
                                 <div class="col-sm-6 col-lg-4">
                                     <div class="event-grid">
@@ -104,7 +105,7 @@
                                         </div>
                                         <div class="movie-content bg-one">
                                             <h5 class="title m-0">
-                                                <a href="#0"><?= $ten_phim ?></a>
+                                                <a href="<?= $link_phim ?>"><?= $ten_phim ?></a>
                                             </h5>
                                         </div>
                                     </div>

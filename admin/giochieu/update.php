@@ -9,20 +9,32 @@ if (is_array($one_showtime)) {
         <div class="form-group row">
             <label for="fname" class="col-sm-3 text-right control-label col-form-label">Giờ Chiếu</label>
             <div class="col-sm-9">
-                <input type="text" class="form-control" name="giochieu" value="<?= $gio_chieu ?>" placeholder="Điền Giờ Chiếu">
+                <input type="text" class="form-control" name="gio_chieu" value="<?= $gio_chieu ?>" placeholder="Điền Giờ Chiếu">
                 <input type="hidden" name="id_giochieu" value="<?= $id_giochieu ?>">
             </div>
         </div>
         <div class="form-group row">
-            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Ngày chiếu</label>
+            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Điền ngay chieu</label>
             <div class="col-sm-9">
-                <input type="text" class="form-control" name="ngay_chieu" value="<?= $id_ngaychieu ?>" placeholder="Điền Ngày chiếu">
+                <select name="id_ngaychieu">
+                    <option value="<?= $id_phim ?>"><?= $id_ngaychieu ?></option>
+                    <?php foreach ($list_ngaychieu as $ngay_chieu) : ?>
+                        <?php extract($ngay_chieu); ?>
+                        <option value="<?= $id_ngaychieu ?>"><?= $id_ngaychieu ?> - <?= $ngay_chieu ?></option>
+                    <?php endforeach; ?>
+                </select>
             </div>
         </div>
         <div class="form-group row">
-            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Phim</label>
+            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Điền phim</label>
             <div class="col-sm-9">
-                <input type="text" class="form-control" name="id_phim" value="<?= $id_phim ?>" placeholder="Điền phim">
+                <select name="id_phim">
+                    <option value="<?= $id_phim ?>"><?= $id_phim ?></option>
+                    <?php foreach ($list as $phim) : ?>
+                        <?php extract($phim); ?>
+                        <option value="<?= $id_phim ?>"><?= $id_phim ?> - <?= $ten_phim ?></option>
+                    <?php endforeach; ?>
+                </select>
             </div>
         </div>
     </div>

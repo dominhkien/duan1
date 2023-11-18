@@ -37,6 +37,16 @@ switch ($act) {
         $VIEW = "view/public/productdetail.php";
         break;
 
+    case "ghe":
+        $title = "Danh sách ghế";
+        $VIEW = "view/public/ghe.php";
+        break;
+
+    case "pay":
+        $title = "Thanh toán";
+        $VIEW = "view/public/thanhtoan.php";
+        break;
+
     default:
         $title = "Trang chủ";
         $VIEW = "view/public/home.php";

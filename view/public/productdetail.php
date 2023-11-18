@@ -1,4 +1,5 @@
-<section style="margin-bottom: 200px;" class="details-banner bg_img" data-background="assets/images/banner/banner03.jpg">
+<section style="margin-bottom: 200px;" class="details-banner bg_img"
+    data-background="assets/images/banner/banner03.jpg">
     <div class="container">
         <?php extract($one_phim);
         $time_of_phim = time_of_phim($id_phim);
@@ -7,7 +8,7 @@
         // var_dump($time_of_phim);
         // var_dump($date_of_phim);
         ?>
-        <form action="" class="details-banner-wrapper" method="post">
+        <form action="index.php?act=ghe" class="details-banner-wrapper" method="post">
             <div class="details-banner-thumb">
                 <img src="upload/<?= $anh ?>" alt="">
                 <a href="<?= $trailer ?>" class="video-popup">
@@ -20,7 +21,8 @@
                 <input type="hidden" name="ten_phim" value="<?= $ten_phim ?>">
 
                 <div class="social-and-duration">
-                    <div class="duration-area" style="margin-top:30px; display: flex; flex-direction: column; row-gap: 15px;">
+                    <div class="duration-area"
+                        style="margin-top:30px; display: flex; flex-direction: column; row-gap: 15px;">
 
                         <div class="item">
                             <i class="fa-solid fa-location-dot"></i><span><?= $dia_diem ?></span>
@@ -50,8 +52,9 @@
 
                     </div>
                 </div>
-                <button style="width: 100px; height: 50px; margin-top: 20px;" type="button" class="btn btn-outline-success text-center">
-                    <a href="index.php?act=addghe">Thêm</a>
+                <button style="width: 100px; height: 50px; margin-top: 20px;" type="submit"
+                    class="btn btn-outline-success text-center">
+                    Đặt vé
                 </button>
             </div>
         </form>

@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
     <title><?= $title ?? "" ?></title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css?ver=<?= rand() ?>">
+    <link rel="stylesheet" href="assets/css/ghe.css?ver=<?= rand() ?>">
     <link rel="stylesheet" href="assets/css/all.min.css?ver=<?= rand() ?>">
     <link rel="stylesheet" href="assets/css/animate.css?ver=<?= rand() ?>">
     <link rel="stylesheet" href="assets/css/flaticon.css?ver=<?= rand() ?>">
@@ -39,7 +40,8 @@
             <div class="header-wrapper">
                 <div class="logo">
                     <a href="index.php">
-                        <img style="width: 170px; height: 80px; object-fit: cover;" src="assets/images/logo/logoquy.png" alt="logo">
+                        <img style="width: 170px; height: 80px; object-fit: cover;" src="assets/images/logo/logoquy.png"
+                            alt="logo">
                     </a>
                 </div>
                 <ul class="menu">
@@ -48,9 +50,6 @@
                     </li>
                     <li>
                         <a href="index.php?act=listphim">movies</a>
-                    </li>
-                    <li>
-                        <a href="contact.html">location</a>
                     </li>
                     <li class="header-button pr-0">
                         <a href="sign-up.html">join us</a>
