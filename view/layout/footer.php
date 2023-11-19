@@ -1,11 +1,10 @@
-    <!-- ==========Newslater-Section========== -->
-    <footer class="footer-section">
+<!-- ==========Newslater-Section========== -->
+<footer class="footer-section">
         <div class="container">
             <div class="footer-top">
                 <div class="logo">
                     <a href="index-1.html">
-                        <img style="width: 180px; height: 80px; object-fit: cover;"
-                            src="assets/images/footer/logoquy.png" alt="footer">
+                        <img style="width: 180px; height: 80px; object-fit: cover;" src="assets/images/footer/logoquy.png" alt="footer">
                     </a>
                 </div>
                 <ul class="social-icons">
@@ -65,21 +64,35 @@
     <!-- ==========Newslater-Section========== -->
 
 
-    <script src="assets/js/jquery-3.3.1.min.js?ver=<?= rand() ?>"></script>
-    <script src="assets/js/modernizr-3.6.0.min.js?ver=<?= rand() ?>"></script>
-    <script src="assets/js/plugins.js?ver=<?= rand() ?>"></script>
-    <script src="assets/js/bootstrap.min.js?ver=<?= rand() ?>"></script>
-    <script src="assets/js/heandline.js?ver=<?= rand() ?>"></script>
-    <script src="assets/js/isotope.pkgd.min.js?ver=<?= rand() ?>"></script>
-    <script src="assets/js/magnific-popup.min.js?ver=<?= rand() ?>"></script>
-    <script src="assets/js/owl.carousel.min.js?ver=<?= rand() ?>"></script>
-    <script src="assets/js/wow.min.js?ver=<?= rand() ?>"></script>
-    <script src="assets/js/countdown.min.js?ver=<?= rand() ?>"></script>
-    <script src="assets/js/odometer.min.js?ver=<?= rand() ?>"></script>
-    <script src="assets/js/viewport.jquery.js?ver=<?= rand() ?>"></script>
-    <script src="assets/js/nice-select.js?ver=<?= rand() ?>"></script>
-    <script src="assets/js/main.js?ver=<?= rand() ?>"></script>
-    <script src="assets/js/ghe.js?ver=<?= rand() ?>"></script>
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/modernizr-3.6.0.min.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/heandline.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/magnific-popup.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/countdown.min.js"></script>
+    <script src="assets/js/odometer.min.js"></script>
+    <script src="assets/js/viewport.jquery.js"></script>
+    <script src="assets/js/nice-select.js"></script>
+    <script src="assets/js/main.js"></script>
     </body>
+    <!-- <script>
+        let user = document.querySelector(".user-Information")
+        let button = document.querySelector(".user")
+        let countLogin = 0
+        let body = document.querySelector("body")
+        // let main = document.querySelector('.main')
 
+        button.addEventListener("click", () => {
+            countLogin++
+            if (countLogin % 2 != 0) {
+                user.style.transform = "translateX(0%)"
+            } else {
+                user.style.transform = "translateX(100%)"
+            }
+        })
+    </script> -->
     </html>

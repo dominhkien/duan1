@@ -99,7 +99,7 @@
                                                <span>Giờ chiếu : </span>
                                                <a href="#0">
                                                    <?= $time_of_phim['gio_chieu'] ?? "" ?>
-                                               </a>
+                                               </a>H
                                            </div>
                                        </div>
                                    </div>
