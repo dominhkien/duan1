@@ -5,6 +5,8 @@ require_once "model/phim/phim.php";
 require_once "model/time/ngay_chieu.php";
 require_once "model/time/gio_chieu.php";
 require_once "model/time/dia_diem.php";
+require_once "model/ghe/ghe.php";
+require_once "model/phong/phong.php";
 
 ob_start();
 $act = $_GET['act'] ?? "";
@@ -39,6 +41,13 @@ switch ($act) {
 
     case "ghe":
         $title = "Danh sách ghế";
+        $list_10ghe = list_10ghe();
+        $list_20ghe = list_20ghe();
+        $list_30ghe = list_30ghe();
+
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            extract($_POST);
+        }
         $VIEW = "view/public/ghe.php";
         break;
 

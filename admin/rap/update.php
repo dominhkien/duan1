@@ -14,9 +14,27 @@ if (is_array($one_rap)) {
             </div>
         </div>
         <div class="form-group row">
-            <label for="fname" class="col-sm-3 text-right control-label col-form-label"> Tên địa điểm</label>
+            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Địa Điểm </label>
             <div class="col-sm-9">
-                <input type="text" class="form-control" name="id_diadiem" value="<?= $id_diadiem ?>" placeholder="Điền tên địa điểm">
+                <select name="id_diadiem">
+                    <option value="<?= $id_diadiem ?>"><?= $id_diadiem ?></option>
+                    <?php foreach ($list_diadiem as $diadiem) : ?>
+                        <?php extract($diadiem); ?>
+                        <option value="<?= $id_diadiem ?>"><?= $id_diadiem ?> - <?= $ten_diadiem ?> </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Phong</label>
+            <div class="col-sm-9">
+                <select name="id_phong">
+                    <option value="<?= $id_phong ?>"><?= $id_phong ?></option>
+                    <?php foreach ($list_phong as $phong) : ?>
+                        <?php extract($phong); ?>
+                        <option value="<?= $id_phong ?>"><?= $id_phong ?> - <?= $ten_phong ?> </option>
+                    <?php endforeach; ?>
+                </select>
             </div>
         </div>
     </div>

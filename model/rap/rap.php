@@ -1,15 +1,15 @@
 <?php
 // thêm rạp
-function add_rap($ten_rap, $id_diadiem)
+function add_rap($ten_rap, $id_diadiem, $id_phong)
 {
-    $sql = "insert into rap(ten_rap, id_diadiem) values(?, ?)";
-    pdo_execute($sql, $ten_rap, $id_diadiem);
+    $sql = "insert into rap(ten_rap, id_diadiem, id_phong) values(?, ?, ?)";
+    pdo_execute($sql, $ten_rap, $id_diadiem, $id_phong);
 }
 // update rạp
-function update_rap($ten_rap, $id_diadiem, $id_rap)
+function update_rap($ten_rap, $id_diadiem, $id_phong, $id_rap)
 {
-    $sql = "update rap set ten_rap = ?, id_diadiem = ? where id_rap = ?";
-    pdo_execute($sql, $ten_rap, $id_diadiem, $id_rap);
+    $sql = "update rap set ten_rap = ?, id_diadiem = ?, id_phong = ? where id_rap = ?";
+    pdo_execute($sql, $ten_rap, $id_diadiem, $id_phong, $id_rap);
 }
 // xoá rạp
 function delete_rap($id_rap)

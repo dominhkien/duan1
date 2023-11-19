@@ -8,6 +8,7 @@ require_once "../model/khuyenmai/khuyenmai.php";
 require_once "../model/time/dia_diem.php";
 require_once "../model/time/gio_chieu.php";
 require_once "../model/time/ngay_chieu.php";
+require_once "../model/ghe/ghe.php";
 
 ob_start();
 $act = $_GET['act'] ?? "";
@@ -16,6 +17,7 @@ $list = all_phim();
 $list_theloai = all_theloai();
 $list_diadiem = list_location();
 $list_rap = list_rap();
+$list_phong = list_phong();
 $list_ngaychieu = list_showdate();
 $list_giochieu = list_showtime();
 
@@ -37,7 +39,8 @@ switch ($act) {
         $title = "Thêm Phòng";
         if (isset($_POST['them']) && $_POST['them']) {
             $ten_phong = $_POST['ten_phong'];
-            add_phong($ten_phong);
+            $id_phim = $_POST['id_phim'];
+            add_phong($ten_phong, $id_phim);
             $mess = "Thêm Thành Công";
         }
         $VIEW = "phong/add.php";
@@ -55,7 +58,8 @@ switch ($act) {
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $ten_phong = $_POST['ten_phong'];
             $id_phong = $_POST['id_phong'];
-            update_phong($ten_phong, $id_phong);
+            $id_phim = $_POST['id_phim'];
+            update_phong($ten_phong, $id_phim, $id_phong);
         }
         $list_phong = list_phong();
         $VIEW = "phong/list.php";
@@ -82,7 +86,9 @@ switch ($act) {
         if (isset($_POST['them']) && $_POST['them']) {
             $ten_rap = $_POST['ten_rap'];
             $id_diadiem = $_POST['id_diadiem'];
-            add_rap($ten_rap, $id_diadiem);
+            $id_diadiem = $_POST['id_diadiem'];
+            $id_phong = $_POST['id_phong'];
+            add_rap($ten_rap, $id_diadiem, $id_phong);
             $mess = "Thêm Thành Công";
         }
         $VIEW = "rap/add.php";
@@ -102,7 +108,8 @@ switch ($act) {
             $ten_rap = $_POST['ten_rap'];
             $id_rap = $_POST['id_rap'];
             $id_diadiem = $_POST['id_diadiem'];
-            update_rap($ten_rap, $id_diadiem, $id_rap);
+            $id_phong = $_POST['id_phong'];
+            update_rap($ten_rap, $id_diadiem, $id_phong, $id_rap);
         }
         $list_rap = list_rap();
         $VIEW = "rap/list.php";
@@ -411,6 +418,53 @@ switch ($act) {
         }
         $list = all_phim();
         $VIEW = "phim/list.php";
+        break;
+
+        // ghế 
+    case 'list_ghe':
+        $title = "Danh Sách Ghế";
+        $list_ghe = list_ghe();
+        $VIEW = "ghe/list.php";
+        break;
+
+    case 'add_ghe':
+        $title = "Thêm Ghế";
+        if (isset($_POST['them']) && $_POST['them']) {
+            $ten_ghe = $_POST['ten_ghe'];
+            $gia_ghe = $_POST['gia_ghe'];
+            add_ghe($ten_ghe, $gia_ghe);
+            $mess = "Thêm Thành Công";
+        }
+        $VIEW = "ghe/add.php";
+        break;
+
+    case 'update_ghe':
+        $title = "Sửa Ghe";
+        if (isset($_GET['id_ghe']) && $_GET['id_ghe'] > 0) {
+            $id_ghe = $_GET['id_ghe'];
+            $one_ghe = one_ghe($id_ghe);
+            $VIEW = "ghe/update.php";
+        }
+        break;
+
+    case 'sua_ghe':
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            $gia_ghe = $_POST['gia_ghe'];
+            $ten_ghe = $_POST['ten_ghe'];
+            $id_ghe = $_POST['id_ghe'];
+            update_ghe($ten_ghe, $gia_ghe, $id_ghe);
+        }
+        $list_ghe = list_ghe();
+        $VIEW = "ghe/list.php";
+        break;
+
+    case 'delete_ghe':
+        if (isset($_GET['id_ghe']) && $_GET['id_ghe'] > 0) {
+            $id_ghe = $_GET['id_ghe'];
+            delete_ghe($id_ghe);
+        }
+        $list_ghe = list_ghe();
+        $VIEW = "ghe/list.php";
         break;
 
     default:

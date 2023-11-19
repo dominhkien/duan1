@@ -93,6 +93,16 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?act=list_ghe"
+                        aria-expanded="false">
+                        <i class="fa-solid fa-couch"></i>
+                        </i>
+                        <span class="hide-menu">
+                            Chair
+                        </span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="charts.html"
                         aria-expanded="false">
                         <i class="mdi mdi-chart-bar">

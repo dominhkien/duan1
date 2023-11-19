@@ -1,7 +1,7 @@
 <?php
 if (is_array($one_phong)) {
     extract($one_phong);
-} 
+}
 ?>
 <form action="index.php?act=sua_phong" method="post" class="form-horizontal">
     <div class="card-body">
@@ -9,9 +9,21 @@ if (is_array($one_phong)) {
         <div class="form-group row">
             <label for="fname" class="col-sm-3 text-right control-label col-form-label"> Tên Phòng</label>
             <div class="col-sm-9">
-                <input type="text" class="form-control" name="ten_phong" value="<?=$ten_phong?>"
+                <input type="text" class="form-control" name="ten_phong" value="<?= $ten_phong ?>"
                     placeholder="Điền tên phong">
-                <input type="hidden" name="id_phong" value="<?=$id_phong?>">
+                <input type="hidden" name="id_phong" value="<?= $id_phong ?>">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="fname" class="col-sm-3 text-right control-label col-form-label">phim </label>
+            <div class="col-sm-9">
+                <select name="id_phim">
+                    <option value="<?= $id_phim ?>"><?= $id_phim ?></option>
+                    <?php foreach ($list as $phim) : ?>
+                    <?php extract($phim) ?>
+                    <option value="<?= $id_phim ?>"><?= $id_phim ?> - <?= $ten_phim ?></option>
+                    <?php endforeach; ?>
+                </select>
             </div>
         </div>
     </div>

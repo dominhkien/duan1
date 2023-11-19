@@ -19,130 +19,33 @@
 
                 <form class="chair" accept="" method="get">
                     <ul>
-                        <li>
-                            <input type="text" value="A1" readonly>
-                            <input type="hidden" value="123">
-                        </li>
-                        <li>
-                            <input type="text" value="A2" readonly>
-                            <input type="hidden" value="123">
-                        </li>
-                        <li>
-                            <input type="text" value="A3" readonly>
-                            <input type="hidden" value="123">
-                        </li>
-                        <li>
-                            <input type="text" value="A4" readonly>
-                            <input type="hidden" value="123">
-                        </li>
-                        <li>
-                            <input type="text" value="A5" readonly>
-                            <input type="hidden" value="123">
-                        </li>
-                        <li>
-                            <input type="text" value="A6" readonly>
-                            <input type="hidden" value="123">
-                        </li>
-                        <li>
-                            <input type="text" value="A7" readonly>
-                            <input type="hidden" value="123">
-                        </li>
-                        <li>
-                            <input type="text" value="A8" readonly>
-                            <input type="hidden" value="123">
-                        </li>
-                        <li>
-                            <input type="text" value="A9" readonly>
-                            <input type="hidden" value="123">
-                        </li>
-                        <li>
-                            <input type="text" value="A10" readonly>
-                            <input type="hidden" value="123">
-                        </li>
+                        <?php foreach ($list_10ghe as $ghe1) : ?>
+                            <?php extract($ghe1); ?>
+                            <li>
+                                <input type="text" value="<?= $ten_ghe ?>" readonly>
+                                <input type="hidden" value="<?= $gia_ghe ?>">
+                            </li>
+                        <?php endforeach; ?>
                     </ul>
+
                     <ul>
-                        <li>
-                            <input type="text" value="B1" readonly>
-                            <input type="hidden" value="123">
-                        </li>
-                        <li>
-                            <input type="text" value="B2" readonly>
-                            <input type="hidden" value="123">
-                        </li>
-                        <li>
-                            <input type="text" value="B3" readonly>
-                            <input type="hidden" value="123">
-                        </li>
-                        <li>
-                            <input type="text" value="B4" readonly>
-                            <input type="hidden" value="123">
-                        </li>
-                        <li>
-                            <input type="text" value="B5" readonly>
-                            <input type="hidden" value="123">
-                        </li>
-                        <li>
-                            <input type="text" value="B6" readonly>
-                            <input type="hidden" value="123">
-                        </li>
-                        <li>
-                            <input type="text" value="B7" readonly>
-                            <input type="hidden" value="123">
-                        </li>
-                        <li>
-                            <input type="text" value="B8" readonly>
-                            <input type="hidden" value="123">
-                        </li>
-                        <li>
-                            <input type="text" value="B9" readonly>
-                            <input type="hidden" value="123">
-                        </li>
-                        <li>
-                            <input type="text" value="B10" readonly>
-                            <input type="hidden" value="123">
-                        </li>
+                        <?php foreach ($list_20ghe as $ghe2) : ?>
+                            <?php extract($ghe2); ?>
+                            <li>
+                                <input type="text" value="<?= $ten_ghe ?>" readonly>
+                                <input type="hidden" value="<?= $gia_ghe ?>">
+                            </li>
+                        <?php endforeach; ?>
                     </ul>
+
                     <ul>
-                        <li>
-                            <input type="text" value="C1" readonly>
-                            <input type="hidden" value="123">
-                        </li>
-                        <li>
-                            <input type="text" value="C2" readonly>
-                            <input type="hidden" value="123">
-                        </li>
-                        <li>
-                            <input type="text" value="C3" readonly>
-                            <input type="hidden" value="123">
-                        </li>
-                        <li>
-                            <input type="text" value="C4" readonly>
-                            <input type="hidden" value="123">
-                        </li>
-                        <li>
-                            <input type="text" value="C5" readonly>
-                            <input type="hidden" value="123">
-                        </li>
-                        <li>
-                            <input type="text" value="C6" readonly>
-                            <input type="hidden" value="123">
-                        </li>
-                        <li>
-                            <input type="text" value="C7" readonly>
-                            <input type="hidden" value="123">
-                        </li>
-                        <li>
-                            <input type="text" value="C8" readonly>
-                            <input type="hidden" value="123">
-                        </li>
-                        <li>
-                            <input type="text" value="C9" readonly>
-                            <input type="hidden" value="123">
-                        </li>
-                        <li>
-                            <input type="text" value="C10" readonly>
-                            <input type="hidden" value="123">
-                        </li>
+                        <?php foreach ($list_30ghe as $ghe3) : ?>
+                            <?php extract($ghe3); ?>
+                            <li>
+                                <input type="text" value="<?= $ten_ghe ?>" readonly>
+                                <input type="hidden" value="<?= $gia_ghe ?>">
+                            </li>
+                        <?php endforeach; ?>
                     </ul>
                 </form>
             </div>
@@ -156,31 +59,39 @@
                 </ul>
             </div>
         </div>
-
+        <?php // var_dump($_POST)
+        extract($_POST);
+        ?>
         <div class="right-wpr-list-chair">
             <form action="" class="content-bill" method="post">
                 <div class="info-film">
                     <div class="name-film">
                         <p>
-                            Người Vợ Cuối Cùng
+                            <?= $ten_phim ?>
                         </p>
                         <input type="hidden" name="">
                     </div>
                     <div class="theater-film">
-                        <trong>
-                            Beta Đan Phượng
-                        </trong>
+                        <strong>
+                            <?= $dia_diem ?>
+                        </strong>
+                        <input type="hidden" name="">
+                    </div>
+                    <div class="theater-film">
+                        <strong>
+                            <?= $ten_rap ?>
+                        </strong>
                         <input type="hidden" name="">
                     </div>
                     <div class="date-film">
                         <p>
-                            Suất 16:45 07/11/2023
+                            <?= $ngay_chieu ?> Vào <?= $gio_chieu ?> Giờ
                         </p>
                         <input type="hidden" name="">
                     </div>
                     <div class="room-film">
                         <span>
-                            Phòng chiếu P5 - Ghế:
+                            Phòng: <?= $id_phong ?>
                         </span>
                         <input type="hidden" name="">
                     </div>

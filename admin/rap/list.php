@@ -12,6 +12,7 @@
                                 <th scope="col">ID</th>
                                 <th scope="col">NAME</th>
                                 <th scope="col">LOCATION</th>
+                                <th scope="col">ROOM</th>
                                 <th scope="col">OPTION</th>
                             </tr>
                         </thead>
@@ -24,6 +25,7 @@
                             <td>' . $rap['id_rap'] . '</td>
                             <td>' . $rap['ten_rap'] . '</td>
                             <td>' . $rap['id_diadiem'] . '</td>
+                            <td>' . $rap['id_phong'] . '</td>
                             <td><a href="' . $update . '"><input type="button"  value="Sửa"></a>
                             <a href="' . $delete . '"><input type="button"  value="Xoá"></a></td>
                         </tr>';

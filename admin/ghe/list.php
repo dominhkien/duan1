@@ -2,28 +2,28 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title m-b-0">Danh sách Phòng</h5>
+                <h5 class="card-title m-b-0">Danh sách Ghế</h5>
             </div>
-            <form action="index.php?act=list_phong" method="post">
+            <form action="index.php?act=list_ghe" method="post">
                 <div class="table-responsive">
                     <table class="table">
                         <thead class="thead-light">
                             <tr>
                                 <th scope="col">ID</th>
-                                <th scope="col">NAME</th>
-                                <th scope="col">FILM</th>
-                                <th scope="col">OPTION</th>
+                                <th scope="col">Tên Ghế</th>
+                                <th scope="col">Gía Ghế</th>
+                                <th>!</th>
                             </tr>
                         </thead>
                         <tbody class="customtable">
                             <tr>
-                                <?php foreach ($list_phong as $phong) {
-                                    $update = "index.php?act=update_phong&id_phong=" . $phong['id_phong'];
-                                    $delete = "index.php?act=delete_phong&id_phong=" . $phong['id_phong'];
+                                <?php foreach ($list_ghe as $ghe) {
+                                    $update = "index.php?act=update_ghe&id_ghe=" . $ghe['id_ghe'];
+                                    $delete = "index.php?act=delete_ghe&id_ghe=" . $ghe['id_ghe'];
                                     echo '<tr>
-                            <td>' . $phong['id_phong'] . '</td>
-                            <td>' . $phong['ten_phong'] . '</td>
-                            <td>' . $phong['id_phim'] . '</td>
+                            <td>' . $ghe['id_ghe'] . '</td>
+                            <td>' . $ghe['ten_ghe'] . '</td>
+                            <td>' . $ghe['gia_ghe'] . '</td>
                             <td><a href="' . $update . '"><input type="button"  value="Sửa"></a>
                             <a href="' . $delete . '"><input type="button"  value="Xoá"></a></td>
                         </tr>';
@@ -37,6 +37,6 @@
         </div>
     </div>
     <button type="button" class="btn btn-outline-success text-center">
-        <a style="color: #000000;" href="index.php?act=add_phong">Thêm</a>
+        <a style="color: #000000;" href="index.php?act=add_ghe">Thêm</a>
     </button>
 </div>
