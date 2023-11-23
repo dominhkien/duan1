@@ -8,7 +8,10 @@ require_once "../model/khuyenmai/khuyenmai.php";
 require_once "../model/time/dia_diem.php";
 require_once "../model/time/gio_chieu.php";
 require_once "../model/time/ngay_chieu.php";
+<<<<<<< HEAD
 require_once "../model/ghe/ghe.php";
+=======
+>>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
 
 ob_start();
 $act = $_GET['act'] ?? "";
@@ -17,7 +20,10 @@ $list = all_phim();
 $list_theloai = all_theloai();
 $list_diadiem = list_location();
 $list_rap = list_rap();
+<<<<<<< HEAD
 $list_phong = list_phong();
+=======
+>>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
 $list_ngaychieu = list_showdate();
 $list_giochieu = list_showtime();
 
@@ -39,8 +45,12 @@ switch ($act) {
         $title = "Thêm Phòng";
         if (isset($_POST['them']) && $_POST['them']) {
             $ten_phong = $_POST['ten_phong'];
+<<<<<<< HEAD
             $id_phim = $_POST['id_phim'];
             add_phong($ten_phong, $id_phim);
+=======
+            add_phong($ten_phong);
+>>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
             $mess = "Thêm Thành Công";
         }
         $VIEW = "phong/add.php";
@@ -58,8 +68,12 @@ switch ($act) {
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $ten_phong = $_POST['ten_phong'];
             $id_phong = $_POST['id_phong'];
+<<<<<<< HEAD
             $id_phim = $_POST['id_phim'];
             update_phong($ten_phong, $id_phim, $id_phong);
+=======
+            update_phong($ten_phong, $id_phong);
+>>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
         }
         $list_phong = list_phong();
         $VIEW = "phong/list.php";
@@ -86,9 +100,13 @@ switch ($act) {
         if (isset($_POST['them']) && $_POST['them']) {
             $ten_rap = $_POST['ten_rap'];
             $id_diadiem = $_POST['id_diadiem'];
+<<<<<<< HEAD
             $id_diadiem = $_POST['id_diadiem'];
             $id_phong = $_POST['id_phong'];
             add_rap($ten_rap, $id_diadiem, $id_phong);
+=======
+            add_rap($ten_rap, $id_diadiem);
+>>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
             $mess = "Thêm Thành Công";
         }
         $VIEW = "rap/add.php";
@@ -108,8 +126,12 @@ switch ($act) {
             $ten_rap = $_POST['ten_rap'];
             $id_rap = $_POST['id_rap'];
             $id_diadiem = $_POST['id_diadiem'];
+<<<<<<< HEAD
             $id_phong = $_POST['id_phong'];
             update_rap($ten_rap, $id_diadiem, $id_phong, $id_rap);
+=======
+            update_rap($ten_rap, $id_diadiem, $id_rap);
+>>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
         }
         $list_rap = list_rap();
         $VIEW = "rap/list.php";
@@ -218,8 +240,12 @@ switch ($act) {
         if (isset($_POST['them']) && $_POST['them']) {
             $gio_chieu = $_POST['gio_chieu'];
             $id_ngaychieu = $_POST['id_ngaychieu'];
+<<<<<<< HEAD
             $id_phim = $_POST['id_phim'];
             add_showtime($gio_chieu, $id_ngaychieu, $id_phim);
+=======
+            add_showtime($gio_chieu, $id_ngaychieu);
+>>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
             $mess = "Thêm Thành Công";
         }
         $VIEW = "giochieu/add.php";
@@ -253,8 +279,12 @@ switch ($act) {
             $gio_chieu = $_POST['gio_chieu'];
             $id_giochieu = $_POST['id_giochieu'];
             $id_ngaychieu = $_POST['id_ngaychieu'];
+<<<<<<< HEAD
             $id_phim = $_POST['id_phim'];
             update_showtime($gio_chieu, $id_ngaychieu, $id_phim, $id_giochieu);
+=======
+            update_showtime($gio_chieu, $id_ngaychieu, $id_giochieu);
+>>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
         }
         $list_showtime = list_showtime();
         $VIEW = "giochieu/list.php";
@@ -394,8 +424,11 @@ switch ($act) {
             $id_diadiem = $_POST['id_diadiem'];
             $id_rap = $_POST['id_rap'];
             $thoi_luong = $_POST['thoi_luong'];
+<<<<<<< HEAD
             $gia_phim = $_POST['gia_phim'];
             $km_phim = $_POST['km_phim'];
+=======
+>>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
             $trailer = $_POST['trailer'];
 
             if (!empty($_FILES['anh']['name'])) {
@@ -420,6 +453,7 @@ switch ($act) {
         $VIEW = "phim/list.php";
         break;
 
+<<<<<<< HEAD
         // ghế 
     case 'list_ghe':
         $title = "Danh Sách Ghế";
@@ -467,6 +501,8 @@ switch ($act) {
         $VIEW = "ghe/list.php";
         break;
 
+=======
+>>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
     default:
         $title = "Trang chủ";
         $VIEW = "public/home.php";

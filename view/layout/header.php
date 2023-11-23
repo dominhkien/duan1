@@ -19,7 +19,10 @@
     <link rel="stylesheet" href="assets/css/nice-select.css?ver=<?= rand() ?>">
     <link rel="stylesheet" href="assets/css/jquery.animatedheadline.css?ver=<?= rand() ?>">
     <link rel="stylesheet" href="assets/css/main.css?ver=<?= rand() ?>">
+<<<<<<< HEAD
     <link rel="stylesheet" href="assets/css/ghe.css?ver=<?= rand() ?>">
+=======
+>>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
         $(document).ready(function() {

@@ -31,4 +31,8 @@ function one_km($id_km)
     $one_km = pdo_query_one($sql, $id_km);
     return $one_km;
 }
+<<<<<<< HEAD
 //model
+=======
+//model
+>>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b

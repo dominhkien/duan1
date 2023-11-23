@@ -16,6 +16,11 @@
                             <th scope="col">Địa điểm</th>
                             <th scope="col">Rạp</th>
                             <th scope="col">Thời lượng</th>
+<<<<<<< HEAD
+=======
+                            <th scope="col">Ngày chiếu</th>
+                            <th scope="col">Giờ chiếu</th>
+>>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
                             <th scope="col">Trailer</th>
                             <th scope="col">Giá</th>
                             <th scope="col">Khuyến mãi</th>
@@ -25,7 +30,10 @@
                     <tbody class="customtable">
                         <?php foreach ($list as $phim) : ?>
                             <?php extract($phim);
+<<<<<<< HEAD
 
+=======
+>>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
                             $xoaphim = "index.php?act=xoaphim&id_phim=$id_phim";
                             $suaphim = "index.php?act=sphim&id_phim=$id_phim";
                             ?>
@@ -40,6 +48,11 @@
                                 <td><?= $dia_diem ?></td>
                                 <td><?= $ten_rap ?></td>
                                 <td><?= $thoi_luong ?></td>
+<<<<<<< HEAD
+=======
+                                <td><?= $ngay_chieu ?></td>
+                                <td><?= $gio_chieu ?> Giờ</td>
+>>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
                                 <td><?= $trailer ?></td>
                                 <td><?= $gia_phim ?></td>
                                 <td><?= $km_phim ?></td>

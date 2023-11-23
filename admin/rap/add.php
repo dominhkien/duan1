@@ -13,6 +13,7 @@
                 <select name="id_diadiem">
                     <option value="" disabled hidden selected>Địa điểm</option>
                     <?php foreach ($list_diadiem as $diadiem) : ?>
+<<<<<<< HEAD
                     <?php extract($diadiem); ?>
                     <option value="<?= $id_diadiem ?>"><?= $id_diadiem ?> - <?= $ten_diadiem ?> </option>
                     <?php endforeach; ?>
@@ -27,6 +28,10 @@
                     <?php foreach ($list_phong as $phong) : ?>
                     <?php extract($phong); ?>
                     <option value="<?= $id_phong ?>"><?= $id_phong ?> - <?= $ten_phong ?> </option>
+=======
+                        <?php extract($diadiem); ?>
+                        <option value="<?= $id_diadiem ?>"><?= $id_diadiem ?> - <?= $ten_diadiem ?> </option>
+>>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
                     <?php endforeach; ?>
                 </select>
             </div>

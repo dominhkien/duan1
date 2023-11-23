@@ -29,4 +29,8 @@ function one_theloai($id_loai)
     $sql = "select * from the_loai where id_loai = ?";
     $one_loai = pdo_query_one($sql, $id_loai);
     return $one_loai;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b

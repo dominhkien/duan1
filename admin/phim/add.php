@@ -1,4 +1,4 @@
-            <form action="index.php?act=addphim" class="form-horizontal" method="post" enctype="multipart/form-data">
+<form action="index.php?act=addphim" class="form-horizontal" method="post" enctype="multipart/form-data">
                 <div class="card-body">
                     <h4 class="card-title text-center">Thêm phim</h4>
                     <div class="form-group row">

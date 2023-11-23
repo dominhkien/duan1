@@ -1,5 +1,6 @@
 <?php
 // thêm rạp
+<<<<<<< HEAD
 function add_rap($ten_rap, $id_diadiem, $id_phong)
 {
     $sql = "insert into rap(ten_rap, id_diadiem, id_phong) values(?, ?, ?)";
@@ -10,6 +11,18 @@ function update_rap($ten_rap, $id_diadiem, $id_phong, $id_rap)
 {
     $sql = "update rap set ten_rap = ?, id_diadiem = ?, id_phong = ? where id_rap = ?";
     pdo_execute($sql, $ten_rap, $id_diadiem, $id_phong, $id_rap);
+=======
+function add_rap($ten_rap, $id_diadiem)
+{
+    $sql = "insert into rap(ten_rap, id_diadiem) values(?, ?)";
+    pdo_execute($sql, $ten_rap, $id_diadiem);
+}
+// update rạp
+function update_rap($ten_rap, $id_diadiem, $id_rap)
+{
+    $sql = "update rap set ten_rap = ?, id_diadiem = ? where id_rap = ?";
+    pdo_execute($sql, $ten_rap, $id_diadiem, $id_rap);
+>>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
 }
 // xoá rạp
 function delete_rap($id_rap)
@@ -24,12 +37,15 @@ function list_rap()
     $list = pdo_query($sql);
     return $list;
 }
+<<<<<<< HEAD
 function rap_of_phim($id_diadiem)
 {
     $sql = "select * from rap where id_diadiem = ?";
     $list_rap = pdo_query($sql, $id_diadiem);
     return $list_rap;
 }
+=======
+>>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
 // select 1 rạp theo id
 function one_rap($id_rap)
 {

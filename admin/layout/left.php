@@ -93,6 +93,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
+<<<<<<< HEAD
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?act=list_ghe"
                         aria-expanded="false">
                         <i class="fa-solid fa-couch"></i>
@@ -103,6 +104,8 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
+=======
+>>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="charts.html"
                         aria-expanded="false">
                         <i class="mdi mdi-chart-bar">

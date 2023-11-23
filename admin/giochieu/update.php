@@ -9,11 +9,16 @@ if (is_array($one_showtime)) {
         <div class="form-group row">
             <label for="fname" class="col-sm-3 text-right control-label col-form-label">Giờ Chiếu</label>
             <div class="col-sm-9">
+<<<<<<< HEAD
                 <input type="text" class="form-control" name="gio_chieu" value="<?= $gio_chieu ?>" placeholder="Điền Giờ Chiếu">
+=======
+                <input type="text" class="form-control" name="giochieu" value="<?= $gio_chieu ?>" placeholder="Điền Giờ Chiếu">
+>>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
                 <input type="hidden" name="id_giochieu" value="<?= $id_giochieu ?>">
             </div>
         </div>
         <div class="form-group row">
+<<<<<<< HEAD
             <label for="fname" class="col-sm-3 text-right control-label col-form-label">Điền ngay chieu</label>
             <div class="col-sm-9">
                 <select name="id_ngaychieu">
@@ -35,6 +40,17 @@ if (is_array($one_showtime)) {
                         <option value="<?= $id_phim ?>"><?= $id_phim ?> - <?= $ten_phim ?></option>
                     <?php endforeach; ?>
                 </select>
+=======
+            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Ngày chiếu</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="ngay_chieu" value="<?= $id_ngaychieu ?>" placeholder="Điền Ngày chiếu">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Phim</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="id_phim" value="<?= $id_phim ?>" placeholder="Điền phim">
+>>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
             </div>
         </div>
     </div>

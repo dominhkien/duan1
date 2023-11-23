@@ -14,6 +14,7 @@ if (is_array($one_rap)) {
             </div>
         </div>
         <div class="form-group row">
+<<<<<<< HEAD
             <label for="fname" class="col-sm-3 text-right control-label col-form-label">Địa Điểm </label>
             <div class="col-sm-9">
                 <select name="id_diadiem">
@@ -35,6 +36,11 @@ if (is_array($one_rap)) {
                         <option value="<?= $id_phong ?>"><?= $id_phong ?> - <?= $ten_phong ?> </option>
                     <?php endforeach; ?>
                 </select>
+=======
+            <label for="fname" class="col-sm-3 text-right control-label col-form-label"> Tên địa điểm</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="id_diadiem" value="<?= $id_diadiem ?>" placeholder="Điền tên địa điểm">
+>>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
             </div>
         </div>
     </div>

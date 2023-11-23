@@ -66,9 +66,13 @@
                         </div>
                         <div class="row mb-30-none justify-content-center">
                             <?php foreach ($phim_hot as $top3) : ?>
+<<<<<<< HEAD
                                 <?php extract($top3);
                                 $link_phim = "index.php?act=ctphim&id_phim=" . $id_phim;
                                 ?>
+=======
+                                <?php extract($top3) ?>
+>>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
                                 <div class="col-sm-6 col-lg-4">
                                     <div class="movie-grid">
                                         <div class="movie-thumb c-thumb">
@@ -78,7 +82,11 @@
                                         </div>
                                         <div class="movie-content bg-one">
                                             <h6 class="title m-0">
+<<<<<<< HEAD
                                                 <a style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" href="<?= $link_phim ?>"><?= $ten_phim ?></a>
+=======
+                                                <a style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" href="#0"><?= $ten_phim ?></a>
+>>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
                                             </h6>
                                         </div>
                                     </div>
@@ -89,12 +97,20 @@
                     <div class="article-section padding-bottom">
                         <div class="section-header-1">
                             <h2 class="title">MOVIES</h2>
+<<<<<<< HEAD
                             <a class="view-all" href="index.php?act=listphim">View All</a>
                         </div>
                         <div class="row mb-30-none justify-content-center">
                             <?php foreach ($phim_3 as $listh) : ?>
                                 <?php extract($listh);
                                 $link_phim = "index.php?act=ctphim&id_phim=" . $id_phim;
+=======
+                            <a class="view-all" href="index.php?act=listmovie">View All</a>
+                        </div>
+                        <div class="row mb-30-none justify-content-center">
+                            <?php foreach ($list_phim as $listh) : ?>
+                                <?php extract($listh);
+>>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
                                 ?>
                                 <div class="col-sm-6 col-lg-4">
                                     <div class="event-grid">
@@ -105,7 +121,11 @@
                                         </div>
                                         <div class="movie-content bg-one">
                                             <h5 class="title m-0">
+<<<<<<< HEAD
                                                 <a href="<?= $link_phim ?>"><?= $ten_phim ?></a>
+=======
+                                                <a href="#0"><?= $ten_phim ?></a>
+>>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
                                             </h5>
                                         </div>
                                     </div>
