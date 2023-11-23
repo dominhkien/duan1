@@ -1,118 +1,65 @@
-    <!-- ==========Page-Title========== -->
-    <section class="page-title bg-one">
-        <div class="container">
-            <div class="page-title-area">
-                <div class="item date-item">
-                    <span class="date">MON, SEP 09 2020</span>
+<?php
+// var_dump($_POST);
+// var_dump($_SESSION['datve']);
+$phim = ten_of_phim($id_phim);
+// var_dump($phim);
+?>
+<!-- ==========Event-Section========== -->
+<div class="event-facility padding-bottom padding-top">
+    <div class="container">
+        <form action="index.php?act=thanhtoanok" class="row" method="post">
+            <input type="hidden" name="id_phim" value="<?= $id_phim ?>">
+            <input type="hidden" name="id_diadiem" value="<?= $id_diadiem ?>">
+            <input type="hidden" name="id_rap" value="<?= $id_rap ?>">
+            <input type="hidden" name="id_ngaychieu" value="<?= $id_ngaychieu ?>">
+            <input type="hidden" name="id_giochieu" value="<?= $id_giochieu ?>">
+            <input type="hidden" name="id_phong" value="<?= $id_phong ?>">
+            <div class="col-lg-8">
+                <div class="checkout-widget checkout-card mb-0">
+                    <h5 class="title">Thanh toán trực tiếp </h5>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- ==========Page-Title========== -->
+            <div class="col-lg-4">
+                <div class="booking-summery bg-one">
+                    <h4 class="title">thanh toán online</h4>
+                    <ul>
+                        <?php foreach ($phim as $index => $p) : ?>
+                            <?php if ($index === 0) : ?>
+                                <?php
+                                extract($p);
+                                $timestamp = strtotime($ngay_chieu);
+                                $fm_date = date("d/m/Y", $timestamp);
+                                ?>
+                                <li>
+                                    <h6 class="subtitle"><?= $ten_phim ?></h6>
+                                </li>
+                                <li>
+                                    <h6 class="subtitle"><span><?= $ten_rap ?></span></h6>
+                                    <div class="info"><span><?= $fm_date ?> vào lúc: <?= $gio_chieu ?> Giờ</span>
+                                        <span>Tickets</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h6 class="subtitle mb-0"><span>Tickets
+                                            Price</span><span><?= $_SESSION['datve']['tong_gia'] ?> $</span></h6>
+                                </li>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </ul>
 
-    <!-- ==========Event-Section========== -->
-    <div class="event-facility padding-bottom padding-top">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="checkout-widget checkout-card mb-0">
-                        <h5 class="title">Payment Option </h5>
-                        <ul class="payment-option">
-                            <li class="active">
-                                <a href="#0">
-                                    <img src="assets/images/payment/card.png" alt="payment">
-                                    <span>Credit Card</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#0">
-                                    <img src="assets/images/payment/card.png" alt="payment">
-                                    <span>Debit Card</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#0">
-                                    <img src="assets/images/payment/paypal.png" alt="payment">
-                                    <span>paypal</span>
-                                </a>
-                            </li>
-                        </ul>
-                        <h6 class="subtitle">Enter Your Card Details </h6>
-                        <form class="payment-card-form">
-                            <div class="form-group w-100">
-                                <label for="card1">Card Details</label>
-                                <input type="text" id="card1">
-                                <div class="right-icon">
-                                    <i class="flaticon-lock"></i>
-                                </div>
-                            </div>
-                            <div class="form-group w-100">
-                                <label for="card2"> Name on the Card</label>
-                                <input type="text" id="card2">
-                            </div>
-                            <div class="form-group">
-                                <label for="card3">Expiration</label>
-                                <input type="text" id="card3" placeholder="MM/YY">
-                            </div>
-                            <div class="form-group">
-                                <label for="card4">CVV</label>
-                                <input type="text" id="card4" placeholder="CVV">
-                            </div>
-                            <div class="form-group check-group">
-                                <input id="card5" type="checkbox" checked>
-                                <label for="card5">
-                                    <span class="title">QuickPay</span>
-                                    <span class="info">Save this card information to my Boleto account and make faster
-                                        payments.</span>
-                                </label>
-                            </div>
-                            <div class="form-group">
-                                <input type="submit" class="custom-button" value="make payment">
-                            </div>
-                        </form>
-                        <p class="notice">
-                            By Clicking "Make Payment" you agree to the <a href="#0">terms and conditions</a>
-                        </p>
-                    </div>
+                    <ul>
+                        <li>
+                            <span class="info"><span>Film price</span><span><?= $gia_phim ?> $</span></span>
+                        </li>
+                    </ul>
                 </div>
-                <div class="col-lg-4">
-                    <div class="booking-summery bg-one">
-                        <h4 class="title">booking summery</h4>
-                        <ul>
-                            <li>
-                                <h6 class="subtitle">Venus</h6>
-                                <span class="info">English-2d</span>
-                            </li>
-                            <li>
-                                <h6 class="subtitle"><span>City Walk</span><span>02</span></h6>
-                                <div class="info"><span>10 SEP TUE, 11:00 PM</span> <span>Tickets</span></div>
-                            </li>
-                            <li>
-                                <h6 class="subtitle mb-0"><span>Tickets Price</span><span>$150</span></h6>
-                            </li>
-                        </ul>
-                        <ul class="side-shape">
-                            <li>
-                                <h6 class="subtitle"><span>combos</span><span>$57</span></h6>
-                                <span class="info"><span>2 Nachos Combo</span></span>
-                            </li>
-                            <li>
-                                <h6 class="subtitle"><span>food & bevarage</span></h6>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                <span class="info"><span>price</span><span>$207</span></span>
-                                <span class="info"><span>vat</span><span>$15</span></span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="proceed-area  text-center">
-                        <h6 class="subtitle"><span>Amount Payable</span><span>$222</span></h6>
-                        <a href="#0" class="custom-button back-button">proceed</a>
-                    </div>
+                <div class="proceed-area  text-center">
+                    <?php $tong_gia = $_SESSION['datve']['tong_gia'] + $gia_phim ?>
+                    <h6 class="subtitle"><span>total price</span><span><?= $tong_gia ?> $</span></h6>
+                    <button type="submit" class="custom-button back-button">pay</button>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
-    <!-- ==========Event-Section========== -->
+</div>
+<!-- ==========Event-Section========== -->

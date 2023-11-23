@@ -32,9 +32,9 @@ function one_showdate($id_ngaychieu)
     return $one_showdate;
 }
 
-function date_of_phim($id_phim)
+function date_of_rap($id_rap)
 {
-    $sql = "select ngay_chieu.ngay_chieu from ngay_chieu where ngay_chieu.id_phim = ?";
-    $date_of_phim = pdo_query_one($sql, $id_phim);
+    $sql = "select * from ngay_chieu where id_rap = ?";
+    $date_of_phim = pdo_query($sql, $id_rap);
     return $date_of_phim;
 }

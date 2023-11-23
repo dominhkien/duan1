@@ -1,6 +1,12 @@
 <!-- MAIN -->
 <div class="list-chair">
-    <div class="wpr-list-chair">
+    <form action="index.php?act=pay" class="wpr-list-chair" method="post">
+        <input type="hidden" name="id_phim" value="<?= $id_phim ?>">
+        <input type="hidden" name="id_diadiem" value="<?= $id_diadiem ?>">
+        <input type="hidden" name="id_rap" value="<?= $id_rap ?>">
+        <input type="hidden" name="id_ngaychieu" value="<?= $id_ngaychieu ?>">
+        <input type="hidden" name="id_giochieu" value="<?= $id_giochieu ?>">
+        <input type="hidden" name="id_phong" value="<?= $id_phong ?>">
         <div class="left-wpr-list-chair">
             <div class="title-chair">
                 <h1>
@@ -17,12 +23,12 @@
                     </ul>
                 </div>
 
-                <form class="chair" accept="" method="get">
+                <div class="chair">
                     <ul>
-                        <?php foreach ($list_10ghe as $ghe1) : ?>
+                        <?php foreach ($list_10ghe as $index => $ghe1) : ?>
                             <?php extract($ghe1); ?>
                             <li>
-                                <input type="text" value="<?= $ten_ghe ?>" readonly>
+                                <input type="checkbox" name="ten_ghe[]" value="<?= $ten_ghe ?>" readonly>
                                 <input type="hidden" value="<?= $gia_ghe ?>">
                             </li>
                         <?php endforeach; ?>
@@ -32,7 +38,7 @@
                         <?php foreach ($list_20ghe as $ghe2) : ?>
                             <?php extract($ghe2); ?>
                             <li>
-                                <input type="text" value="<?= $ten_ghe ?>" readonly>
+                                <input type="checkbox" name="ten_ghe[]" value="<?= $ten_ghe ?>" readonly>
                                 <input type="hidden" value="<?= $gia_ghe ?>">
                             </li>
                         <?php endforeach; ?>
@@ -42,12 +48,12 @@
                         <?php foreach ($list_30ghe as $ghe3) : ?>
                             <?php extract($ghe3); ?>
                             <li>
-                                <input type="text" value="<?= $ten_ghe ?>" readonly>
+                                <input type="checkbox" name="ten_ghe[]" value="<?= $ten_ghe ?>" readonly>
                                 <input type="hidden" value="<?= $gia_ghe ?>">
                             </li>
                         <?php endforeach; ?>
                     </ul>
-                </form>
+                </div>
             </div>
 
             <div class="info-chair">
@@ -59,39 +65,40 @@
                 </ul>
             </div>
         </div>
-        <?php // var_dump($_POST)
-        extract($_POST);
-        ?>
+
+        <?php extract($tt_phim) ?>
         <div class="right-wpr-list-chair">
-            <form action="" class="content-bill" method="post">
+            <div class="content-bill">
                 <div class="info-film">
                     <div class="name-film">
-                        <p>
-                            <?= $ten_phim ?>
-                        </p>
-                        <input type="hidden" name="">
+                        <strong>
+                            Tên phim: <?= $ten_phim ?>
+                        </strong>
                     </div>
                     <div class="theater-film">
                         <strong>
-                            <?= $dia_diem ?>
+                            Địa điểm:<?= $dia_diem ?>
                         </strong>
-                        <input type="hidden" name="">
                     </div>
                     <div class="theater-film">
                         <strong>
-                            <?= $ten_rap ?>
+                            Rạp: <?= $ten_rap ?>
                         </strong>
-                        <input type="hidden" name="">
                     </div>
-                    <div class="date-film">
-                        <p>
-                            <?= $ngay_chieu ?> Vào <?= $gio_chieu ?> Giờ
-                        </p>
-                        <input type="hidden" name="">
+                    <div class="theater-film">
+                        <strong>
+                            Ngày: <?= $ngay_chieu ?>
+                        </strong>
                     </div>
+                    <div class="theater-film">
+                        <strong>
+                            Giờ chiếu: <?= $gio_chieu ?>:00
+                        </strong>
+                    </div>
+
                     <div class="room-film">
                         <span>
-                            Phòng: <?= $id_phong ?>
+                            Phòng chiếu <?= $ten_phong ?> - Ghế:
                         </span>
                         <input type="hidden" name="">
                     </div>
@@ -103,12 +110,12 @@
                             TỔNG ĐƠN HÀNG
                         </span>
                         <h3 id="selected-chair-price">0 nghin</h3>
-                        <input type="hidden" name="" value="0">
+                        <input type="hidden" name="tong_gia" value="0">
                     </div>
                 </div>
                 <button type="submit">Tiếp tục</button>
-            </form>
+            </div>
         </div>
-    </div>
+    </form>
 </div>
 <!-- END MAIN -->

@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="assets/css/nice-select.css?ver=<?= rand() ?>">
     <link rel="stylesheet" href="assets/css/jquery.animatedheadline.css?ver=<?= rand() ?>">
     <link rel="stylesheet" href="assets/css/main.css?ver=<?= rand() ?>">
+    <link rel="stylesheet" href="assets/css/ghe.css?ver=<?= rand() ?>">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
         $(document).ready(function() {
@@ -81,7 +82,7 @@
         <div class="container">
             <div class="header-wrapper">
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="index.php?act=home">
                         <img style="width: 170px; height: 80px; object-fit: cover;" src="assets/images/logo/logoquy.png" alt="logo">
                     </a>
                 </div>

@@ -16,10 +16,13 @@ function all_phim($id_ctg = 0)
 
 function one_phim($id_phim)
 {
-    $sql = "select phim.*, the_loai.ten_loai as ten_loai, dia_diem.ten_diadiem as dia_diem, rap.ten_rap as ten_rap from phim 
+    $sql = "select phim.*, the_loai.ten_loai as ten_loai, dia_diem.ten_diadiem as dia_diem, rap.ten_rap as ten_rap, ngay_chieu.ngay_chieu as ngay_chieu, gio_chieu.gio_chieu as gio_chieu, phong.ten_phong as ten_phong from phim 
     join the_loai on phim.id_loai = the_loai.id_loai 
     join dia_diem on phim.id_diadiem = dia_diem.id_diadiem 
     join rap on phim.id_rap = rap.id_rap
+    join ngay_chieu on ngay_chieu.id_phim = phim.id_phim
+    join gio_chieu on gio_chieu.id_phim = phim.id_phim
+    join phong on phong.id_phim = phim.id_phim
     where phim.id_phim = ?";
     $one = pdo_query_one($sql, $id_phim);
     return $one;
@@ -66,4 +69,15 @@ function phim_3()
     join rap on phim.id_rap = rap.id_rap limit 0,3";
     $hot = pdo_query($sql);
     return $hot;
+}
+
+function ten_of_phim($id_phim)
+{
+    $sql = "select phim.*, rap.ten_rap as ten_rap, ngay_chieu.ngay_chieu as ngay_chieu, gio_chieu.gio_chieu as gio_chieu from phim 
+    join rap on phim.id_rap = rap.id_rap
+    join ngay_chieu on ngay_chieu.id_phim = phim.id_phim
+    join gio_chieu on gio_chieu.id_phim = phim.id_phim
+    where phim.id_phim = ?";
+    $one = pdo_query($sql, $id_phim);
+    return $one;
 }

@@ -1,5 +1,5 @@
 // pay
-let chairs = document.querySelectorAll(".chair ul li input[type='text']")
+let chairs = document.querySelectorAll(".chair ul li input[type='checkbox']")
 let chairSelect = document.querySelector(".info-film .room-film span")
 let priceChair = document.querySelectorAll(".chair ul li input[type='hidden']")
 let selectedChairPriceElement = document.getElementById("selected-chair-price")
@@ -19,7 +19,7 @@ chairs.forEach((chair, index) => {
             sumPrice += parseFloat(chairPrice)
             priceBill.value = sumPrice
             selectedChairPriceElement.innerHTML = sumPrice + " VND"
-            console.log(priceBill.value)
+            // console.log(priceBill.value)
         } else {
             chair.style.background = "#001232"
             countChair--

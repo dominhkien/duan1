@@ -24,6 +24,12 @@ function list_rap()
     $list = pdo_query($sql);
     return $list;
 }
+function rap_of_phim($id_diadiem)
+{
+    $sql = "select * from rap where id_diadiem = ?";
+    $list_rap = pdo_query($sql, $id_diadiem);
+    return $list_rap;
+}
 // select 1 rạp theo id
 function one_rap($id_rap)
 {
