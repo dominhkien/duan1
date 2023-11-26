@@ -1,15 +1,15 @@
 <?php
 // thêm ngày chiếu
-function add_showdate($ngay_chieu, $id_phim)
+function add_showdate($ngay_chieu, $id_phim, $id_rap, $id_phong)
 {
-    $sql = "insert into ngay_chieu(ngay_chieu, id_phim) value(?, ?)";
-    pdo_execute($sql, $ngay_chieu, $id_phim);
+    $sql = "insert into ngay_chieu(ngay_chieu, id_phim, id_rap, id_phong) value(?, ?, ?, ?)";
+    pdo_execute($sql, $ngay_chieu, $id_phim, $id_rap, $id_phong);
 }
 //update ngày chiếu
-function update_showdate($ngay_chieu, $id_phim, $id_ngaychieu)
+function update_showdate($ngay_chieu, $id_phim, $id_rap, $id_phong, $id_ngaychieu)
 {
-    $sql = "update ngay_chieu set ngay_chieu = ?, id_phim = ? where id_ngaychieu = ?";
-    pdo_execute($sql, $ngay_chieu, $id_phim, $id_ngaychieu);
+    $sql = "update ngay_chieu set ngay_chieu = ?, id_phim = ?, id_rap = ?, id_phong = ? where id_ngaychieu = ?";
+    pdo_execute($sql, $ngay_chieu, $id_phim, $id_rap, $id_phong, $id_ngaychieu);
 }
 //xoá ngày chiếu
 function delete_showdate($id_ngaychieu)
@@ -20,7 +20,11 @@ function delete_showdate($id_ngaychieu)
 // list ngày chiếu
 function list_showdate()
 {
-    $sql = "select * from ngay_chieu order by id_ngaychieu desc";
+    $sql = "select ngay_chieu.*, phim.ten_phim as ten_phim, rap.ten_rap as ten_rap, 
+    phong.ten_phong as ten_phong from ngay_chieu 
+    join phim on phim.id_phim = ngay_chieu.id_phim  
+    join rap on rap.id_rap = ngay_chieu.id_rap 
+    join phong on phong.id_phong = ngay_chieu.id_phong";
     $list_showdate = pdo_query($sql);
     return $list_showdate;
 }
@@ -28,20 +32,13 @@ function list_showdate()
 function one_showdate($id_ngaychieu)
 {
     $sql = "select * from ngay_chieu where id_ngaychieu =?";
-    $one_showdate = pdo_query($sql, $id_ngaychieu);
+    $one_showdate = pdo_query_one($sql, $id_ngaychieu);
     return $one_showdate;
 }
 
-<<<<<<< HEAD
 function date_of_rap($id_rap)
 {
     $sql = "select * from ngay_chieu where id_rap = ?";
     $date_of_phim = pdo_query($sql, $id_rap);
-=======
-function date_of_phim($id_phim)
-{
-    $sql = "select ngay_chieu.ngay_chieu from ngay_chieu where ngay_chieu.id_phim = ?";
-    $date_of_phim = pdo_query_one($sql, $id_phim);
->>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
     return $date_of_phim;
 }

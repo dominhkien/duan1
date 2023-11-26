@@ -49,3 +49,10 @@ function one_ghe($id_ghe)
     $one_ghe = pdo_query_one($sql, $id_ghe);
     return $one_ghe;
 }
+
+function ghe_of_ve()
+{
+    $sql = "select ds_ghe from ve";
+    $ghe_da_chon = pdo_query($sql);
+    return $ghe_da_chon;
+}

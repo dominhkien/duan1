@@ -45,31 +45,19 @@
                            <div class="tab-item">
                                <div class="row mb-10 justify-content-center">
                                    <?php foreach ($list_phim as $phim) : ?>
-<<<<<<< HEAD
                                    <?php extract($phim);
                                         $link_phim = "index.php?act=ctphim&id_phim=" . $id_phim;
                                         ?>
-=======
-                                   <?php extract($phim) ?>
->>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
                                    <div class="col-sm-6 col-lg-4">
                                        <div class="movie-grid">
                                            <div class="movie-thumb c-thumb">
                                                <a href="#0">
-<<<<<<< HEAD
                                                    <img style="object-fit: cover;" src="upload/<?= $anh ?>" alt="">
-=======
-                                                   <img src="upload/<?= $anh ?>" alt="">
->>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
                                                </a>
                                            </div>
                                            <div class="movie-content bg-one">
                                                <h5 class="title m-0">
-<<<<<<< HEAD
                                                    <a href="<?= $link_phim ?>"><?= $ten_phim ?></a>
-=======
-                                                   <a href="#0"><?= $ten_phim ?></a>
->>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
                                                </h5>
                                            </div>
                                        </div>
@@ -81,15 +69,7 @@
                                <div class="movie-area mb-10">
                                    <?php foreach ($list_phim as $phim) : ?>
                                    <?php extract($phim);
-<<<<<<< HEAD
-                                        $date_of_phim = date_of_phim($id_phim);
-                                        // var_dump($date_of_phim);
-                                        $time_of_phim = time_of_phim($id_phim);
-                                        // var_dump($time_of_phim);
                                         $link_phim = "index.php?act=ctphim&id_phim=" . $id_phim;
-=======
-                                        $format_date = date("d-m-Y", strtotime($ngay_chieu));
->>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
                                         ?>
                                    <div class="movie-list">
                                        <div class="movie-thumb c-thumb">
@@ -99,31 +79,11 @@
                                        </div>
                                        <div class="movie-content bg-one">
                                            <h5 class="title">
-<<<<<<< HEAD
                                                <a href="<?= $link_phim ?>"><?= $ten_phim ?></a>
-=======
-                                               <a href="#0"><?= $ten_phim ?></a>
->>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
                                            </h5>
                                            <p class="duration"><?= $thoi_luong ?> Phút</p>
                                            <div class="movie-tags">
                                                <a href="#0"><?= $ten_loai ?></a>
-                                           </div>
-                                           <div class="release">
-<<<<<<< HEAD
-                                               <span>Ngày chiếu : </span>
-                                               <a href="#0">
-                                                   <?= $date_of_phim['ngay_chieu'] ?? "" ?>
-                                               </a>
-                                           </div>
-                                           <div class="release">
-                                               <span>Giờ chiếu : </span>
-                                               <a href="#0">
-                                                   <?= $time_of_phim['gio_chieu'] ?? "" ?>
-                                               </a>H
-=======
-                                               <span>Ngày chiếu : </span> <a href="#0"> <?= $format_date ?> </a>
->>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
                                            </div>
                                        </div>
                                    </div>

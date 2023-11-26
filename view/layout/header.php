@@ -10,6 +10,7 @@
     <title><?= $title ?? "" ?></title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css?ver=<?= rand() ?>">
     <link rel="stylesheet" href="assets/css/all.min.css?ver=<?= rand() ?>">
+    <link rel="stylesheet" href="assets/css/ghe.css?ver=<?= rand() ?>">
     <link rel="stylesheet" href="assets/css/animate.css?ver=<?= rand() ?>">
     <link rel="stylesheet" href="assets/css/flaticon.css?ver=<?= rand() ?>">
     <link rel="stylesheet" href="assets/css/magnific-popup.css?ver=<?= rand() ?>">
@@ -19,11 +20,8 @@
     <link rel="stylesheet" href="assets/css/nice-select.css?ver=<?= rand() ?>">
     <link rel="stylesheet" href="assets/css/jquery.animatedheadline.css?ver=<?= rand() ?>">
     <link rel="stylesheet" href="assets/css/main.css?ver=<?= rand() ?>">
-<<<<<<< HEAD
-    <link rel="stylesheet" href="assets/css/ghe.css?ver=<?= rand() ?>">
-=======
->>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js?ver=<?= rand() ?>"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
             $(".header-button.user").click(function() {
@@ -85,7 +83,7 @@
         <div class="container">
             <div class="header-wrapper">
                 <div class="logo">
-                    <a href="index.php?act=home">
+                    <a href="index.php">
                         <img style="width: 170px; height: 80px; object-fit: cover;" src="assets/images/logo/logoquy.png" alt="logo">
                     </a>
                 </div>
@@ -96,9 +94,6 @@
                     <li>
                         <a href="#0">movies</a>
                     </li>
-                    <li>
-                        <a href="contact.html">location</a>
-                    </li>
                     <?php
                     if (isset($_SESSION['khach_hang'])) { ?>
                         <li class="header-button pr-0  user">
@@ -106,10 +101,11 @@
                         </li>
                         <div class="user-Information">
                             <li>
-                                <a href="http://">Thông Tin Người dùng</a></li>
+                                <a href="http://">Thông Tin Người dùng</a>
+                            </li>
                             <li>
-                            <a href="index.php?act=logout">Logout</a> <!-- Thêm liên kết Logout -->
-                        </li>
+                                <a href="index.php?act=logout">Logout</a> <!-- Thêm liên kết Logout -->
+                            </li>
                         </div>
                         <div class="header-bar d-lg-none">
                             <span></span>
@@ -123,10 +119,11 @@
                         </li>
                         <div class="user-Information">
                             <li>
-                                <a href="index.php?act=admin">Đăng nhập admin</a></li>
+                                <a href="index.php?act=admin">Đăng nhập admin</a>
+                            </li>
                             <li>
-                            <a href="index.php?act=logout">Logout</a> <!-- Thêm liên kết Logout -->
-                        </li>
+                                <a href="index.php?act=logout">Logout</a>
+                            </li>
                         </div>
                         <div class="header-bar d-lg-none">
                             <span></span>
@@ -139,7 +136,6 @@
                         </li>
                     <?php } ?>
                 </ul>
-
             </div>
         </div>
     </header>

@@ -10,9 +10,10 @@
                         <thead class="thead-light">
                             <tr>
                                 <th scope="col">ID</th>
-                                <th scope="col">NAME</th>
-                                <th scope="col">DATE</th>
-                                <th scope="col">FILM</th>
+                                <th scope="col">Giờ chiếu</th>
+                                <th scope="col">Ngày chiếu</th>
+                                <th scope="col">Phim</th>
+                                <th scope="col">Phòng</th>
                                 <th scope="col">OPTION</th>
                             </tr>
                         </thead>
@@ -21,15 +22,14 @@
                                 <?php foreach ($list_showtime as $time) {
                                     $suatime = "index.php?act=update_showtime&id_giochieu=" . $time['id_giochieu'];
                                     $xoatime = "index.php?act=delete_showtime&id_giochieu=" . $time['id_giochieu'];
+                                    $timestamp = strtotime($time['ngay_chieu']);
+                                    $fm_date = date("d/m/Y", $timestamp);
                                     echo '<tr>
                             <td>' . $time['id_giochieu'] . '</td>
-<<<<<<< HEAD
                             <td>' . $time['gio_chieu'] . '</td>
-=======
-                            <td>' . $time['giochieu'] . '</td>
->>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
-                            <td>' . $time['id_ngaychieu'] . '</td>
-                            <td>' . $time['id_phim'] . '</td>
+                            <td>' . $fm_date  . '</td>
+                            <td>' . $time['ten_phim'] . '</td>
+                            <td>' . $time['ten_phong'] . '</td>
                             <td><a href="' . $suatime . '"><input type="button"  value="Sửa"></a>
                             <a href="' . $xoatime . '"><input type="button"  value="Xoá"></a></td>
                         </tr>';

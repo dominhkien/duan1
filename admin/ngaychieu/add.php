@@ -19,6 +19,30 @@
                 </select>
             </div>
         </div>
+        <div class="form-group row">
+            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Rạp</label>
+            <div class="col-sm-9">
+                <select name="id_rap">
+                    <option value="" disabled hidden selected>Rạp</option>
+                    <?php foreach ($list_rap as $rap) : ?>
+                        <?php extract($rap); ?>
+                        <option value="<?= $id_rap ?>"><?= $id_rap ?> - <?= $ten_rap ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Phòng</label>
+            <div class="col-sm-9">
+                <select name="id_phong">
+                    <option value="" disabled hidden selected>Phòng</option>
+                    <?php foreach ($list_phong as $phong) : ?>
+                        <?php extract($phong); ?>
+                        <option value="<?= $id_phong ?>"><?= $id_phong ?> - <?= $ten_phong ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+        </div>
     </div>
     <div class="border-top text-center">
         <div class="card-body">

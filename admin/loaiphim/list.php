@@ -17,7 +17,6 @@
                         </thead>
                         <tbody class="customtable">
                             <?php foreach ($list_theloai as $loai) : ?>
-<<<<<<< HEAD
                             <?php extract($loai);
                                     $suatheloai = "index.php?act=stheloai&idtl=".$id_loai;
                                     $xoatheloai = "index.php?act=xoatheloai&idtl=".$id_loai;
@@ -34,21 +33,6 @@
                                             href="<?= $suatheloai ?>">Sửa</a></button>
                                 </td>
                             </tr>
-=======
-                                <?php extract($loai);
-                                $suatheloai = "index.php?act=stheloai&idtl=" . $id_loai;
-                                $xoatheloai = "index.php?act=xoatheloai&idtl=" . $id_loai;
-                                ?>
-                                <tr>
-                                    <td> <?= $id_loai ?> </td>
-                                    <td> <?= $ten_loai ?> </td>
-                                    <td> <?= $trang_thai ?> </td>
-                                    <td>
-                                        <button type="button" class="btn btn-outline-success"><a onclick="return confirm('Xoá là mất luôn ??')" style="color: #000000;" href="<?= $xoatheloai ?>">Xoá</a></button> |
-                                        <button type="button" class="btn btn-outline-success"><a style="color: #000000;" href="<?= $suatheloai ?>">Sửa</a></button>
-                                    </td>
-                                </tr>
->>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
                             <?php endforeach; ?>
                         </tbody>
                     </table>

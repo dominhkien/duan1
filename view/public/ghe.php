@@ -6,7 +6,6 @@
         <input type="hidden" name="id_rap" value="<?= $id_rap ?>">
         <input type="hidden" name="id_ngaychieu" value="<?= $id_ngaychieu ?>">
         <input type="hidden" name="id_giochieu" value="<?= $id_giochieu ?>">
-        <input type="hidden" name="id_phong" value="<?= $id_phong ?>">
         <div class="left-wpr-list-chair">
             <div class="title-chair">
                 <h1>
@@ -25,35 +24,48 @@
 
                 <div class="chair">
                     <ul>
-                        <?php foreach ($list_10ghe as $index => $ghe1) : ?>
-                            <?php extract($ghe1); ?>
-                            <li>
-                                <input type="checkbox" name="ten_ghe[]" value="<?= $ten_ghe ?>" readonly>
-                                <input type="hidden" value="<?= $gia_ghe ?>">
-                            </li>
+                        <?php foreach ($list_10ghe as $ghe1) : ?>
+                        <?php
+                            extract($ghe1);
+                            $is_disabled = in_array($ten_ghe, explode(" ", $seatsString));
+                            ?>
+                        <li>
+                            <input type="checkbox" name="ten_ghe[]" value="<?= $ten_ghe ?>"
+                                <?= $is_disabled ? 'disabled' : '' ?> readonly>
+                            <input type="hidden" value="<?= $gia_ghe ?>">
+                        </li>
                         <?php endforeach; ?>
                     </ul>
 
                     <ul>
                         <?php foreach ($list_20ghe as $ghe2) : ?>
-                            <?php extract($ghe2); ?>
-                            <li>
-                                <input type="checkbox" name="ten_ghe[]" value="<?= $ten_ghe ?>" readonly>
-                                <input type="hidden" value="<?= $gia_ghe ?>">
-                            </li>
+                        <?php
+                            extract($ghe2);
+                            $is_disabled = in_array($ten_ghe, explode(" ", $seatsString));
+                            ?>
+                        <li>
+                            <input type="checkbox" name="ten_ghe[]" value="<?= $ten_ghe ?>"
+                                <?= $is_disabled ? 'disabled' : '' ?> readonly>
+                            <input type="hidden" value="<?= $gia_ghe ?>">
+                        </li>
                         <?php endforeach; ?>
                     </ul>
 
                     <ul>
                         <?php foreach ($list_30ghe as $ghe3) : ?>
-                            <?php extract($ghe3); ?>
-                            <li>
-                                <input type="checkbox" name="ten_ghe[]" value="<?= $ten_ghe ?>" readonly>
-                                <input type="hidden" value="<?= $gia_ghe ?>">
-                            </li>
+                        <?php
+                            extract($ghe3);
+                            $is_disabled = in_array($ten_ghe, explode(" ", $seatsString));
+                            ?>
+                        <li>
+                            <input type="checkbox" name="ten_ghe[]" value="<?= $ten_ghe ?>"
+                                <?= $is_disabled ? 'disabled' : '' ?> readonly>
+                            <input type="hidden" value="<?= $gia_ghe ?>">
+                        </li>
                         <?php endforeach; ?>
                     </ul>
                 </div>
+
             </div>
 
             <div class="info-chair">
@@ -66,7 +78,10 @@
             </div>
         </div>
 
-        <?php extract($tt_phim) ?>
+        <?php extract($tt_phim);
+        $timestamp = strtotime($ngay_chieu);
+        $fm_date = date("d/m/Y", $timestamp);
+        ?>
         <div class="right-wpr-list-chair">
             <div class="content-bill">
                 <div class="info-film">
@@ -87,7 +102,7 @@
                     </div>
                     <div class="theater-film">
                         <strong>
-                            Ngày: <?= $ngay_chieu ?>
+                            Ngày: <?= $fm_date ?>
                         </strong>
                     </div>
                     <div class="theater-film">
@@ -98,9 +113,8 @@
 
                     <div class="room-film">
                         <span>
-                            Phòng chiếu <?= $ten_phong ?> - Ghế:
+                            Phòng chiếu <?= $phong_of_gio['ten_phong'] ?> - Ghế:
                         </span>
-                        <input type="hidden" name="">
                     </div>
                 </div>
 

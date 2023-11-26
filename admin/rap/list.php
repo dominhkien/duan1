@@ -12,10 +12,6 @@
                                 <th scope="col">ID</th>
                                 <th scope="col">NAME</th>
                                 <th scope="col">LOCATION</th>
-<<<<<<< HEAD
-                                <th scope="col">ROOM</th>
-=======
->>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
                                 <th scope="col">OPTION</th>
                             </tr>
                         </thead>
@@ -27,11 +23,7 @@
                                     echo '<tr>
                             <td>' . $rap['id_rap'] . '</td>
                             <td>' . $rap['ten_rap'] . '</td>
-                            <td>' . $rap['id_diadiem'] . '</td>
-<<<<<<< HEAD
-                            <td>' . $rap['id_phong'] . '</td>
-=======
->>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
+                            <td>' . $rap['dia_diem'] . '</td>
                             <td><a href="' . $update . '"><input type="button"  value="Sửa"></a>
                             <a href="' . $delete . '"><input type="button"  value="Xoá"></a></td>
                         </tr>';

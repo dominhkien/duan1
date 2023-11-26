@@ -10,11 +10,9 @@
                         <thead class="thead-light">
                             <tr>
                                 <th scope="col">ID</th>
-                                <th scope="col">NAME</th>
-<<<<<<< HEAD
-                                <th scope="col">FILM</th>
-=======
->>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
+                                <th scope="col">Tên rạp</th>
+                                <th scope="col">Phim</th>
+                                <th scope="col">RẠP</th>
                                 <th scope="col">OPTION</th>
                             </tr>
                         </thead>
@@ -26,10 +24,8 @@
                                     echo '<tr>
                             <td>' . $phong['id_phong'] . '</td>
                             <td>' . $phong['ten_phong'] . '</td>
-<<<<<<< HEAD
-                            <td>' . $phong['id_phim'] . '</td>
-=======
->>>>>>> f0245c972e461f1804b0d9400d346c7b8021f48b
+                            <td>' . $phong['ten_phim'] . '</td>
+                            <td>' . $phong['ten_rap'] . '</td>
                             <td><a href="' . $update . '"><input type="button"  value="Sửa"></a>
                             <a href="' . $delete . '"><input type="button"  value="Xoá"></a></td>
                         </tr>';
