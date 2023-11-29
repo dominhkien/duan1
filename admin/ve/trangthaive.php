@@ -1,5 +1,10 @@
+<?php
+$id_ve = $_GET['id_ve'];
+// echo $id_ve;
+?>
 <div style="margin-left: 250px;" class="row text-center">
-    <div class="col-12">
+    <form action="index.php?act=capnhattt" class="col-12" method="post">
+        <input type="hidden" name="id_ve" value="<?= $id_ve ?>">
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title m-b-0">Danh sách vé</h5>
@@ -21,13 +26,11 @@
                         </tr>
                     </thead>
                     <tbody class="customtable">
-                        <?php foreach ($list_ve as $ve) : ?>
-                        <?php extract($ve);
-                            $timestamp = strtotime($ngay_chieu);
-                            $fm_date = date("d/m/Y", $timestamp);
-                            $thanh_tien = number_format($tong_tien, '0', '.', ',');
-                            $capnhatve = "index.php?act=trangthaive&id_ve=" . $id_ve;
-                            ?>
+                        <?php extract($one_ve);
+                        $timestamp = strtotime($ngay_chieu);
+                        $fm_date = date("d/m/Y", $timestamp);
+                        $thanh_tien = number_format($tong_tien, '0', '.', ',');
+                        ?>
                         <tr>
                             <td><?= $id_ve ?></td>
                             <td><?= $email ?></td>
@@ -38,27 +41,26 @@
                             <td><?= $gio_chieu ?></td>
                             <td><?= $thanh_tien ?></td>
                             <td>
-                                <?php if ($trang_thai == 1) {
-                                        echo "Đã thanh toán";
-                                    } else {
-                                        echo "Chưa thanh toán";
-                                    } ?></td>
-                            <td>
-                                <button type="button" class="btn btn-outline-success text-center">
-                                    <a style="color: #000000;" href="<?= $capnhatve ?>">Cập nhật</a>
-                                </button>
+                                <?php if ($trang_thai == 0) {
+                                    echo 'Chưa thanh toán';
+                                } else {
+                                    echo 'Đã thanh toán';
+                                } ?>
                             </td>
                         </tr>
-                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
         </div>
-    </div>
-    <button type="button" class="btn btn-outline-success text-center">
-        <a style="color: #000000;" href="index.php?act=addphim">Thêm</a>
-    </button>
-    <button style="margin-left: 20px;" type="button" class="btn btn-outline-success text-center">
-        <a style="color: #000000;" href="index.php?act=thongkeve">Thống kê</a>
-    </button>
+
+        <select name="trangthai">
+            <option value="" disabled hidden selected>Trạng thái</option>
+            <option value="0">Chưa thanh toán</option>
+            <option value="1">Đã thanh toán</option>
+        </select>
+        <br>
+        <button style="margin-top: 30px;" type="submit" class="btn btn-outline-success text-center">
+            Cập nhật
+        </button>
+    </form>
 </div>

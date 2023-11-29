@@ -9,7 +9,7 @@ function all_phim($id_ctg = 0)
         $sql .= " join the_loai on phim.id_loai = the_loai.id_loai";
     }
     $sql .= " join dia_diem on phim.id_diadiem = dia_diem.id_diadiem 
-    join rap on phim.id_rap = rap.id_rap";
+     join rap on phim.id_rap = rap.id_rap order by phim.id_phim desc";
     $list = pdo_query($sql);
     return $list;
 }
@@ -17,9 +17,9 @@ function all_phim($id_ctg = 0)
 function one_phim($id_phim)
 {
     $sql = "select phim.*, the_loai.ten_loai as ten_loai, dia_diem.ten_diadiem as dia_diem, rap.ten_rap as ten_rap, ngay_chieu.ngay_chieu as ngay_chieu, gio_chieu.gio_chieu as gio_chieu, phong.ten_phong as ten_phong from phim 
-    join the_loai on phim.id_loai = the_loai.id_loai 
-    join dia_diem on phim.id_diadiem = dia_diem.id_diadiem 
-    join rap on phim.id_rap = rap.id_rap
+    join the_loai on the_loai.id_loai = phim.id_loai 
+    join dia_diem on dia_diem.id_diadiem = phim.id_diadiem
+    join rap on rap.id_rap = phim.id_rap
     join ngay_chieu on ngay_chieu.id_phim = phim.id_phim
     join gio_chieu on gio_chieu.id_phim = phim.id_phim
     join phong on phong.id_phim = phim.id_phim

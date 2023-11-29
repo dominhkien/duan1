@@ -1,9 +1,10 @@
 <?php
-// Thực hiện truy vấn INSERT
-$sql = "INSERT INTO `data` (`data1`, `data2`) VALUES ('{$data1}', '{$data2}')";
-$result = $conn->query($sql);
-
-// Đóng kết nối
-$conn->close();
-
+function insert_binhluan($id_phim, $noi_dung)
+{
+    $id_kh = $_SESSION['khach_hang']['id_kh'];
+    $date = date('Y-m-d');
+    $sql = "insert into binh_luan (noi_dung, id_kh, id_phim, ngay_bl) values ('$noi_dung','$id_kh', '$id_phim', '$date')";
+    $result = pdo_execute($sql);
+    return $result;
+}
 ?>

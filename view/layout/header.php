@@ -101,7 +101,7 @@
                         </li>
                         <div class="user-Information">
                             <li>
-                                <a href="http://">Thông Tin Người dùng</a>
+                                <a href="index.php?act=nguoidung">Thông Tin Người dùng</a>
                             </li>
                             <li>
                                 <a href="index.php?act=logout">Logout</a> <!-- Thêm liên kết Logout -->

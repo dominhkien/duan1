@@ -11,17 +11,22 @@ require_once "model/phong/phong.php";
 require_once "model/rap/rap.php";
 require_once "model/nguoidung/taikhoan.php";
 require_once "model/thanhtoan/thanhtoan.php";
+require_once "model/ve/ve.php";
 
 ob_start();
 $act = $_GET['act'] ?? "";
 $id_ctg = $_REQUEST['id_ctg'] ?? 0;
-$is_sign_page = in_array($act, ['sign-up', 'sign-in']);
+$is_sign_page = in_array($act, ['sign-up', 'sign-in','nguoidung']);
 
 $list_loai = all_theloai();
 $list_ngc = list_showdate();
 $list_phim = all_phim($id_ctg);
 $phim_hot = phim_hot();
 $phim_3 = phim_3();
+
+if(isset($_SESSION['khach_hang']['id_kh']) && $_SESSION['khach_hang']['id_kh']){
+    $list_ve_kh = ve_one_kh($_SESSION['khach_hang']['id_kh']);
+}
 
 switch ($act) {
     case "home":
@@ -243,7 +248,10 @@ switch ($act) {
     case 'admin':
         header('location: admin/index.php');
         break;
-    case 'comment':
+    case 'nguoidung':
+        $title = "Người Dùng";
+        
+        $VIEW = "view/public/nguoidung.php";
           break;
     default:
         $title = "Trang chủ";

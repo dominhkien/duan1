@@ -1,4 +1,8 @@
 <?php
+session_start();
+if (!isset($_SESSION['admin']) || empty($_SESSION['admin'])) {
+    header('location: ../index.php');
+}
 require_once "../model/pdo.php";
 require_once "../model/phim/phim.php";
 require_once "../model/phim/theloai.php";
@@ -43,7 +47,8 @@ switch ($act) {
         if (isset($_POST['them']) && $_POST['them']) {
             $ten_phong = $_POST['ten_phong'];
             $id_phim = $_POST['id_phim'];
-            add_phong($ten_phong, $id_phim);
+            $id_rap = $_POST['id_rap'];
+            add_phong($ten_phong, $id_phim, $id_rap);
             $mess = "Thêm Thành Công";
         }
         $VIEW = "phong/add.php";
@@ -62,7 +67,8 @@ switch ($act) {
             $ten_phong = $_POST['ten_phong'];
             $id_phong = $_POST['id_phong'];
             $id_phim = $_POST['id_phim'];
-            update_phong($ten_phong, $id_phim, $id_phong);
+            $id_rap = $_POST['id_rap'];
+            update_phong($ten_phong, $id_phim, $id_rap, $id_phong);
         }
         $list_phong = list_phong();
         $VIEW = "phong/list.php";
@@ -294,7 +300,7 @@ switch ($act) {
         break;
 
     case 'update_showdate':
-        $title = "Sửa Địa Điểm";
+        $title = "Sửa ngày chiếu";
         if (isset($_GET['id_ngaychieu']) && $_GET['id_ngaychieu'] > 0) {
             $id_ngaychieu = $_GET['id_ngaychieu'];
             $one_showdate = one_showdate($id_ngaychieu);
@@ -303,6 +309,7 @@ switch ($act) {
         break;
 
     case 'update_ngc':
+        var_dump($_POST);
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $ngay_chieu = $_POST['ngay_chieu'];
             $id_ngaychieu = $_POST['id_ngaychieu'];
@@ -479,6 +486,31 @@ switch ($act) {
     case 've':
         $title = "Vé";
         $VIEW = "ve/list.php";
+        break;
+
+    case 'trangthaive':
+        $title = "Trạng thái vé";
+        $one_ve = one_ve($_GET['id_ve']);
+        $VIEW = "ve/trangthaive.php";
+        break;
+
+    case 'capnhattt':
+        var_dump($_POST);
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            $id_ve = $_POST['id_ve'];
+            $trangthai = $_POST['trangthai'];
+            if ($trangthai == 1) {
+                update_ve($id_ve);
+            }
+        }
+        $VIEW = "ve/list.php";
+        break;
+
+    case 'thongkeve':
+        $title = "Thống kế vé";
+        $da_thanhtoan = ve_da_thanhtoan();
+        $ch_thanhtoan = ve_ch_thanhtoan();
+        $VIEW = "ve/thongke.php";
         break;
 
     default:

@@ -25,7 +25,8 @@ $gio_chieu = one_showtime($id_giochieu);
             </div>
             <div class="form-group">
                 <label for="order_id">Mã hóa đơn</label>
-                <input class="form-control" id="order_id" name="order_id" type="text" value="<?php echo date("YmdHis") ?>" />
+                <input class="form-control" id="order_id" name="order_id" type="text"
+                    value="<?php echo date("YmdHis") ?>" />
             </div>
             <div class="form-group">
                 <label for="amount">Số tiền</label>
@@ -33,7 +34,8 @@ $gio_chieu = one_showtime($id_giochieu);
             </div>
             <div class="form-group">
                 <label for="order_desc">Nội dung thanh toán</label>
-                <textarea class="form-control" cols="20" id="order_desc" name="order_desc" rows="2">Noi dung thanh toan</textarea>
+                <textarea class="form-control" cols="20" id="order_desc" name="order_desc"
+                    rows="2">Noi dung thanh toan</textarea>
             </div>
             <div class="form-group">
                 <label for="bank_code">Ngân hàng</label>
@@ -72,7 +74,8 @@ $gio_chieu = one_showtime($id_giochieu);
             </div>
             <div class="form-group">
                 <label>Thời hạn thanh toán</label>
-                <input class="form-control" id="txtexpire" name="txtexpire" type="text" value="<?php echo $expire; ?>" />
+                <input class="form-control" id="txtexpire" name="txtexpire" type="text"
+                    value="<?php echo $expire; ?>" />
             </div>
 
             <div class="form-group">
@@ -81,11 +84,13 @@ $gio_chieu = one_showtime($id_giochieu);
 
             <div class="form-group">
                 <label>Email (*)</label>
-                <input class="form-control" id="txt_billing_email" name="txt_billing_email" type="text" value="<?= $_SESSION['khach_hang']['email'] ?>" />
+                <input class="form-control" id="txt_billing_email" name="txt_billing_email" type="text"
+                    value="<?= $_SESSION['khach_hang']['email'] ?>" />
             </div>
 
             <button type="submit" class="btn btn-primary" id="btnPopup">Thanh toán Post</button>
-            <button style="margin-top: 30px; margin-bottom: 50px;" type="submit" name="redirect" id="redirect" class="btn btn-primary">Thanh
+            <button style="margin-top: 30px; margin-bottom: 50px;" type="submit" name="redirect" id="redirect"
+                class="btn btn-primary">Thanh
                 toán
                 Redirect</button>
         </form>

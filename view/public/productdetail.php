@@ -38,7 +38,6 @@
 </section>
 <?php
 var_dump($_SESSION['khach_hang']);
-// extract($_SESSION['khach_hang']);
 ?>
 <h3>Bình luận</h3>
 <div class="movie-review-item">
@@ -55,31 +54,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['comment'])) {
     // Lấy nội dung bình luận từ dữ liệu gửi đi
     $comment = $_POST['comment'];
 
-    // Lưu nội dung bình luận vào session
-    if (!isset($_SESSION['comments'])) {
-        $_SESSION['comments'] = array();
+    // Tạo một khóa mới trong $_SESSION['khach_hang'] để lưu trữ thông tin bình luận
+    if (!isset($_SESSION['khach_hang']['comments'])) {
+        $_SESSION['khach_hang']['comments'] = array();
     }
-    $_SESSION['comments'][] = $comment;
+    $_SESSION['khach_hang']['comments'][] = $comment;
 
     // Phản hồi với kết quả thành công
     echo "success";
     exit; // Kết thúc xử lý yêu cầu Ajax
 }
+
 ?>
     <div class="movie-review-content">
-        <h6 class="cont-title">Bình Luận</h6>
-        <div id="commentList"></div>
-        <?php
-    // Kiểm tra xem có bình luận trong session hay không
-    if (isset($_SESSION['comments'])) {
+    <h6 class="cont-title">Bình Luận</h6>
+    <div id="commentList"></div>
+    <?php
+    // Kiểm tra xem có bình luận trong session của khách hàng hay không
+    if (isset($_SESSION['khach_hang']['comments'])) {
         // Lặp qua danh sách bình luận và hiển thị chúng
-        foreach ($_SESSION['comments'] as $comment) {
+        foreach ($_SESSION['khach_hang']['comments'] as $comment) {
             echo '<div class="comment">';
             echo '<p class="content">' . $comment . '</p>';
             echo '</div>';
         }
     }
     ?>
+</div>
     </div>
 </div>
 <div id="commentSection" style="margin-top:40px;">
